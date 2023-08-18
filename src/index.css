@@ -186,9 +186,6 @@ button{
 .contact ul{
   list-style: none;
 }
-.form {
-  width: 100%;
-}
 .info {
   display: flex;
   flex-direction: column;
