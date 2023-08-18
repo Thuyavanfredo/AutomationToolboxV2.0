@@ -183,7 +183,7 @@ button{
   font-family: manrope;
   color: #ffffff;
 }
-ul{
+.contact ul{
   list-style: none;
 }
 .form {
@@ -192,12 +192,12 @@ ul{
 .info {
   display: flex;
   flex-direction: column;
-  justify-content:space-between;
+  justify-content:space-evenly;
   position: relative;
   width: 814px;
   height: 452px;
   top: 0px;
-  left: 0px;
+  left: 10px;
   font-family: manrope;
   font-size: 18px;
   color: #ffffff;
