@@ -64,9 +64,8 @@ button:hover{
   margin-right: 12px;
   border-radius: 30px;
   transition: transform 0.5s ease;
-  /* overflow: hidden; */
 }
-.icon::before, .icon::after {
+.icon::before {
   content: "";
   position: absolute;
   top: 0;
@@ -83,12 +82,6 @@ button:hover{
   margin-top: 6px;
   transition: all 0.25s ease;
 }
-.icon:hover {
-  transform: scale(1.2);
-}
-.icon-expand::after {
-  box-shadow: inset 0 0 0 1px #2d2c3e;
-}
 .icon-expand::before {
   background: #fbba4c;
   box-shadow: inset 0 0 0 60px #2d2c3e;
@@ -96,20 +89,28 @@ button:hover{
 .icon-expand:hover::before {
   color: white;
   box-shadow: inset 0 0 0 1px #2d2c3e;
+  transform: scale(1.3);
 }
 .body{
   display: flex;
+  border: 2px solid white;
+  background: url("../img/main_page_low.gif");
+  background-size:cover;
+  border-radius: 10px;
   width: 814px;
   height: 452px;
   margin-left: 30px;
-  display: flex;
+  transition: all 0.5s linear;
 }
 .pdt-body{
   display: flex;
-  width: 814px;
+  border: 2px solid white;
+  background-size:cover;
+  border-radius: 10px;
   height: 452px;
-  margin-left: 30px;
-  display: flex;
+  width: 625px;
+  transition: all 0.5s linear;
+  transform: translateX(200px);
 }
 .video{
   top: 170px;
@@ -120,6 +121,18 @@ button:hover{
   border-radius: 20px;
   width: 229px;
   height: 130px;
+  transition: all 0.75s ease;
+}
+#video{
+  top: 50px;
+  left: 555px;
+  position: absolute;
+  border: 1px solid white;
+  background: radial-gradient(#cfd6cd,#bac0a2);
+  border-radius: 20px;
+  width: 229px;
+  height: 130px;
+  transition: all 0.75s ease;
 }
 .pdt-btns, .spec-btns, .da-btns{
   margin: 0px 10px;

@@ -614,9 +614,22 @@ $(document).ready(function () {
     });
     $(".icon-expand:nth-child(1)").click(function () {
         $(".body").html("");
-        $(".body").css("background-image", "url(../img/main_page_low.png)");
+        $(".body").css({
+          "background-image":"url(../img/main_page_low.png)",
+          "width": "814px",
+          "transform": "translateX(0px)",
+          "transition":"all 0.5s linear",
+        });
+        $(".body").html(`
+        <video class="video" id="video" poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm"></video> 
+        `)
+        $(".pdt-btns").hide();
+        $(".spec-btns").hide();
+        $(".da-btns").hide();
     });
     $(".icon-expand:nth-child(2)").click(function () {
+      var targetElement = document.getElementById('body');
+      targetElement.className="body";
         $(".body").html(`<form id="form">
         <div class="contact">
             <p>For any information or issues in the automation toolbox <br> Please feel free to contact</p>
@@ -628,8 +641,13 @@ $(document).ready(function () {
         </div>
 </form>`);
       $(".body").css("background-image", "none");
+      $(".pdt-btns, .spec-btns").hide();
+      $(".da-btns").hide();
+      $(".video").hide();
     });
     $(".icon-expand:nth-child(3)").click(function () {
+      var targetElement = document.getElementById('body');
+      targetElement.className="body";
       $(".body").html(`<form id="form">
       <div class="info">
         <p>Automation tool box combines all the exisiting automations in SID into once place</p>
@@ -662,6 +680,9 @@ $(document).ready(function () {
       </div>
     </form>`);
     $(".body").css("background-image", "none");
+    $(".pdt-btns, .spec-btns").hide();
+    $(".da-btns").hide();
+    $(".video").hide();
     });
   });
   
