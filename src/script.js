@@ -1,4 +1,88 @@
 $(document).ready(function () {
+    $(".icon-expand:nth-child(1)").click(function () {
+      $(".body").html("");
+      $(".body").css({
+        "background-image":"url(../img/main_page_low.png)",
+        "width": "814px",
+        "transform": "translateX(0px)",
+        "transition":"all 0.5s linear",
+      });
+      $(".body").html(`
+      <video class="video" id="video" poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm"></video> 
+      `)
+      $(".pdt-btns").hide();
+      $(".spec-btns").hide();
+      $(".da-btns").hide();
+    });
+    $(".icon-expand:nth-child(2)").click(function () {
+      var targetElement = document.getElementById('body');
+      targetElement.className="body";
+        $(".body").html(`<form id="form">
+        <div class="contact">
+            <p>For any information or issues in the automation toolbox <br> Please feel free to contact</p>
+            <ul>
+                <li>Thuyavan Tamilarasan(<font color= yellow>tamilt</font>)</li>
+                <li>Dineshkumar Krishnamoorthy(<font color= yellow>krishd6</font>)</li>
+                <li>Periodical XF team</li>
+            </ul>
+        </div>
+    </form>`);
+        $(".body").css({
+          "background-image":"none",
+          "width": "814px",
+          "transform": "translateX(0px)",
+          "transition":"all 0.5s linear",
+        });
+      $(".pdt-btns, .spec-btns").hide();
+      $(".da-btns").hide();
+      $(".video").hide();
+    });
+    $(".icon-expand:nth-child(3)").click(function () {
+      var targetElement = document.getElementById('body');
+      targetElement.className="body";
+      $(".body").html(`<form id="form">
+      <div class="info">
+        <p>Automation tool box combines all the exisiting automations in SID into once place</p>
+        <p>Thanks to all the individuals who have contributed</p>
+        <div class="names">
+            <strong>Graphic Insert Tool</strong>
+            <ul>
+                <li>Dineshkumar Krishnamoorthy</li>
+                <li>Sathesh Thanapaul</li>
+            </ul>
+            <strong>Xref Insert Tool</strong>
+            <ul>
+                <li>Kanakaraj Mayilswamy</li>
+                <li>Sathesh Thanapaul</li>
+            </ul>
+            <strong>Steplist Creator Tool</strong>
+            <ul>
+                <li>Kanakaraj Mayilswamy</li>
+                <li>Thuyavan Tamilarasan</li>
+            </ul>
+            <strong>Metric Conversion Tool</strong>
+            <ul>
+                <li>Paulvin Joseph</li>
+                <li>Zackriya Thajudeen</li>
+                <li>Prabhu Vijayan</li>
+            </ul>
+            <strong>Prefix Update Tool</strong>
+                <ul>
+                    <li>Jarett Karnia</li> 
+                </ul>                                  
+        </div>
+      </div>
+    </form>`);
+    $(".body").css({
+      "background-image":"none",
+      "width": "814px",
+      "transform": "translateX(0px)",
+      "transition":"all 0.5s linear",
+    });
+    $(".pdt-btns, .spec-btns").hide();
+    $(".da-btns").hide();
+    $(".video").hide();
+    });
     $(".bt:eq(0)").click(function () {
       $(".home").html(`<form id="form" class="graphic">
           <div class="main">
@@ -612,88 +696,6 @@ $(document).ready(function () {
   </form>`);
     $(".pdt-body").css("background-image", "none");
     });
-    $(".icon-expand:nth-child(1)").click(function () {
-        $(".body").html("");
-        $(".body").css({
-          "background-image":"url(../img/main_page_low.png)",
-          "width": "814px",
-          "transform": "translateX(0px)",
-          "transition":"all 0.5s linear",
-        });
-        $(".body").html(`
-        <video class="video" id="video" poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm"></video> 
-        `)
-        $(".pdt-btns").hide();
-        $(".spec-btns").hide();
-        $(".da-btns").hide();
-    });
-    $(".icon-expand:nth-child(2)").click(function () {
-      var targetElement = document.getElementById('body');
-      targetElement.className="body";
-        $(".body").html(`<form id="form">
-        <div class="contact">
-            <p>For any information or issues in the automation toolbox <br> Please feel free to contact</p>
-            <ul>
-                <li>Thuyavan Tamilarasan(<font color= yellow>tamilt</font>)</li>
-                <li>Dineshkumar Krishnamoorthy(<font color= yellow>krishd6</font>)</li>
-                <li>Periodical XF team</li>
-            </ul>
-        </div>
-</form>`);
-        $(".body").css({
-          "background-image":"none",
-          "width": "814px",
-          "transform": "translateX(0px)",
-          "transition":"all 0.5s linear",
-        });
-      $(".pdt-btns, .spec-btns").hide();
-      $(".da-btns").hide();
-      $(".video").hide();
-    });
-    $(".icon-expand:nth-child(3)").click(function () {
-      var targetElement = document.getElementById('body');
-      targetElement.className="body";
-      $(".body").html(`<form id="form">
-      <div class="info">
-        <p>Automation tool box combines all the exisiting automations in SID into once place</p>
-        <p>Thanks to all the individuals who have contributed</p>
-        <strong>Graphic Insert Tool</strong>
-        <ul>
-            <li>Dineshkumar Krishnamoorthy</li>
-            <li>Sathesh Thanapaul</li>
-        </ul>
-        <strong>Xref Insert Tool</strong>
-        <ul>
-            <li>Kanakaraj Mayilswamy</li>
-            <li>Sathesh Thanapaul</li>
-        </ul>
-        <strong>Steplist Creator Tool</strong>
-        <ul>
-            <li>Kanakaraj Mayilswamy</li>
-            <li>Thuyavan Tamilarasan</li>
-        </ul>
-        <strong>Metric Conversion Tool</strong>
-        <ul>
-            <li>Paulvin Joseph</li>
-            <li>Zackriya Thajudeen</li>
-            <li>Prabhu Vijayan</li>
-        </ul>
-        <strong>Prefix Update Tool</strong>
-            <ul>
-                <li>Jarett Karnia</li> 
-            </ul>                                  
-      </div>
-    </form>`);
-    $(".body").css({
-      "background-image":"none",
-      "width": "814px",
-      "transform": "translateX(0px)",
-      "transition":"all 0.5s linear",
-    });
-    $(".pdt-btns, .spec-btns").hide();
-    $(".da-btns").hide();
-    $(".video").hide();
-    });
     $("#pdt").click(function () {
       $(".body").html("");
       $(".body").css({
@@ -707,7 +709,7 @@ $(document).ready(function () {
       $(".spec-btns").hide();
       $(".da-btns").hide();
     });
-  $("#spec").click(function () {
+    $("#spec").click(function () {
       $(".body").html("");
       $(".body").css({
           "background-image": "none",
@@ -720,7 +722,7 @@ $(document).ready(function () {
       $(".spec-btns").show();
       $(".da-btns").hide();
     });
-  $("#da").click(function () {
+    $("#da").click(function () {
       $(".body").html("");
       $(".body").css({
           "background-image": "none",
