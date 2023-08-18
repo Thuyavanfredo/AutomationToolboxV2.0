@@ -4,6 +4,7 @@ $(document).ready(function () {
       $(".body").css({
         "background-image":"url(../img/main_page_low.png)",
         "width": "814px",
+        "height": "452px",
         "transform": "translateX(0px)",
         "transition":"all 0.5s linear",
       });
@@ -30,6 +31,7 @@ $(document).ready(function () {
         $(".body").css({
           "background-image":"none",
           "width": "814px",
+          "height": "452px",
           "transform": "translateX(0px)",
           "transition":"all 0.5s linear",
         });
@@ -101,6 +103,7 @@ $(document).ready(function () {
     $(".body").css({
       "background-image":"none",
       "width": "814px",
+      "height": "452px",
       "transform": "translateX(0px)",
       "transition":"all 0.5s linear",
     });
@@ -109,54 +112,49 @@ $(document).ready(function () {
     $(".video").hide();
     });
     $(".bt:eq(0)").click(function () {
-      $(".home").html(`<form id="form" class="graphic">
-          <div class="main">
-              <div class="gno">
-                  <label>Graphic Control Number</label>
-                  <input type="text" required placeholder="Enter your Graphic Control Number" name="graphics">
-              </div>
-              <div class="gtype">
-                  <div class="graptype">
-                      <label class="gt">Graphic Type</label>
-                  </div>
-                  <div class="radio">
-                      <div class="list1">
-                          <div  class="list">
-                              <input class ="r" value=0 type="radio" name="radio">
-                              <label  class="label">Page Wide</label>
-                          </div>
-                          <div class="list">
-                              <input class ="r" value=1 type="radio" name="radio">
-                              <label class="label">Foldout</label>
-                          </div>
-                          <div class="list">
-                              <input class ="r" value=2 type="radio" name="radio">
-                              <label class="label">Column Wide</label>
-                          </div>
-                      </div>
-                      <div class="list1">
-                          <div class="list">
-                              <input class ="r" value=3 type="radio" name="radio">
-                              <label class="label">Full Page</label>
-                          </div>
-                          <div class="list">
-                              <input class ="r" value=4 type="radio" name="radio">
-                              <label class="label">Page Wide Rotated</label>
-                          </div>
-                          <div class="list">
-                              <input class ="r" value=5 type="radio" required name="radio">
-                              <label class="label">Full Page Rotated</label>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-              <div class="bt1">
-                  <button type="submit">Generate</button>
-                  <button type="reset">Clear</button>
-              </div>
+      $(".body").html(`<form id="form">
+                <div class="graphic-container">
+                <div class="gno">
+                    <label class="gtitle">Graphic Number</label>
+                    <input type="text" required placeholder="Enter Graphic Number" name="graphics">
+                </div>
+                <div class="gtype">
+                    <div class="gtitle">Select Graphic Type</div>
+                    <div class="gtype1">
+                        <ul>
+                            <li>
+                                <input type="radio" name="Graphic" value="0">
+                                <label>Page Wide</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="Graphic" value="1">
+                                <label>Column Wide</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="Graphic" value="2">
+                                <label>Full Page</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="Graphic" value="3">
+                                <label>Fold out</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="Graphic" value="4">
+                                <label>Full Page rotated</label>
+                            </li>
+                            <li>
+                                <input type="radio" name="Graphic" value="5">
+                                <label>Page Wide Rotated</label>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="submit">
+                    <button type="submit">Generate</button>
+                    <button type="reset">Clear</button>
+                </div>
+            </div> 
           </form>`);
-      $(".home").css("background-image", "none");
       $("#form").submit(function (e) {
         e.preventDefault();
         const formData = new FormData(e.target);
@@ -164,12 +162,6 @@ $(document).ready(function () {
         const templates = [
           [
             '<figure figure-style="page-wide" id="i06804732.',
-            '"><graphic controlno="',
-            '" href="x-wc://file=',
-            '.cvx"/></figure>',
-          ],
-          [
-            '<figure figure-style="foldout" id="i06804732.',
             '"><graphic controlno="',
             '" href="x-wc://file=',
             '.cvx"/></figure>',
@@ -187,7 +179,7 @@ $(document).ready(function () {
             '.cvx"/></figure>',
           ],
           [
-            '<figure figure-style="page-wide-landscape" id="i06804732.',
+            '<figure figure-style="foldout" id="i06804732.',
             '"><graphic controlno="',
             '" href="x-wc://file=',
             '.cvx"/></figure>',
@@ -198,13 +190,17 @@ $(document).ready(function () {
             '" href="x-wc://file=',
             '.cvx"/></figure>',
           ],
+          [
+            '<figure figure-style="page-wide-landscape" id="i06804732.',
+            '"><graphic controlno="',
+            '" href="x-wc://file=',
+            '.cvx"/></figure>',
+          ],
         ];
-        const x = templates[formProps.radio].join(formProps.graphics);
-        console.log(formProps.radio)
+        const x = templates[formProps.Graphic].join(formProps.graphics);
         navigator.clipboard.writeText(x);
-        $(".modalopen a").click()
       });
-      $(".bt1 button:nth-child(2)").click(function (e) {
+      $(".submit button:nth-child(2)").click(function (e) {
         $("#form").trigger("reset");
       });
     });
@@ -726,6 +722,7 @@ $(document).ready(function () {
       $(".body").css({
           "background-image": "none",
           "width": "626px",
+          "height": "426px",
           "transition":"all 0.5s linear",
           "transform": "translateX(180px)"
       });
@@ -739,8 +736,9 @@ $(document).ready(function () {
       $(".body").css({
           "background-image": "none",
           "width": "626px",
+          "height": "426px",
           "transition":"all 0.5s linear",
-          "transform": "translateX(180px)"
+          "transform": "translateX(180px)",
       });
       $("video").hide();
       $(".pdt-btns").hide();
@@ -752,8 +750,9 @@ $(document).ready(function () {
       $(".body").css({
           "background-image": "none",
           "width": "626px",
+          "height": "426px",
           "transition":"all 0.5s linear",
-          "transform": "translateX(180px)"
+          "transform": "translateX(180px)",
       });
       $("video").hide();
       $(".pdt-btns").hide();

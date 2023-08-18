@@ -8,7 +8,7 @@ html,body {
 }
 @font-face {
   font-family: "Avenir";
-  src: url(../fonts/AvenirLTStd-Black.otf);
+  src: url(../fonts/AvenirLTStd-Book.otf);
 }
 .container{
   margin: 30px 10px 10px 0px;
@@ -47,7 +47,7 @@ nav button{
   border-radius: 10px 10px 0px 0px;
   transition: scale 0.5s ease;
 }
-button:hover{
+.submit button:hover, button:hover{
   background: #fbba4c;
   border: 1px solid white;
   color: #e8ecea;
@@ -198,21 +198,102 @@ button{
   left: 10px;
   font-family: manrope;
   font-size: 18px;
-  color: #ffffff;
+  color: rgb(86, 99, 100);
 }
 .names {
   display: grid;
   grid-template-columns: 250px 250px 250px;
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 120px 120px;
   justify-content: center;
   padding: -12px 0px 0px 0;
   font-family: manrope;
-  font-size: 14px;
+  font-size: 18px;
 }
 .name-align{
   width: 250px;
   height: 100px;
 }
+.name-align ul{
+  color: white;
+}
+.graphic-container{
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
+  position: absolute;
+  top: 45px;
+  left: 5px;
+}
+.graphic-container ul{
+  list-style: none;
+  display: grid;
+  width: 550px;
+  height: 191px;
+  background: #e1e2e2;
+  grid-template-columns: 200px 200px;
+  row-gap: 10px;
+  column-gap: 80px;
+  justify-content: left;
+  align-content: space-around;
+  color: #565946;
+  font-family: 'Avenir';
+  font-size: large;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.gno input{
+  width: 428px;
+  height: 26px;
+  border: none;
+  border-radius: 15px;
+  background: #e1e2e2;
+}
+.gno{
+  display: flex;
+  flex-direction: row;
+}
+.gno input::placeholder {
+  padding-left: 10px;
+}
+.gtype{
+  margin: 80px 0px 0px 0px;
+}
+.gtype1{
+  margin: 0px 0px 0px 20px;
+}
+.gtype1 input{
+  margin: 0px 0px 0px -20px;
+}
+.gtitle{
+  margin: 0px 40px 10px 0px;
+  width: fit-content;
+  color: #383838;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: 'Avenir';
+}
+.submit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+  top: 30px;
+}
+.submit button{
+  width: 134px;
+  height: 38px;
+  padding: 0px 0px;
+  font-family: 'Avenir';
+  font-size: 22px;
+  color: #615648;
+  background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
+  border: none;
+  border-radius: 40px;
+  transition: all 0.5s ease;
+}
+/* input[type='radio']{
+  accent-color: Yellow;
+} */
 @keyframes button-animate{
   0%{
     transform: translateX(-200px);
