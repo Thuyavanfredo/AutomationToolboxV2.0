@@ -48,6 +48,7 @@ nav button{
 button:hover{
   background: #fbba4c;
   color: #e8ecea;
+  scale: 1.05;
 }
 .icon-container {
   margin: 30px 0px 0px 200px;
