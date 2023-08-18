@@ -29,7 +29,6 @@ nav{
   flex-wrap:nowrap;
   height: 640px;
   width: 35px;
-
 }
 nav button{
   z-index: 1;
@@ -45,7 +44,6 @@ nav button{
   transform:rotate(-90deg);
   border: none;
   border-radius: 10px 10px 0px 0px;
-  transition: all 0.3s ease;
 }
 button:hover{
   background: #fbba4c;
@@ -106,6 +104,13 @@ button:hover{
   margin-left: 30px;
   display: flex;
 }
+.pdt-body{
+  display: flex;
+  width: 814px;
+  height: 452px;
+  margin-left: 30px;
+  display: flex;
+}
 .video{
   top: 170px;
   left: 620px;
@@ -125,11 +130,25 @@ button:hover{
   justify-content:space-around;
   width: fit-content;
   height: 452px;
+  transition: all 0.50s ease;
+  animation: button-animate 0.50s linear;
 }
 button{
   padding: 0px 0px;
+  font-family: 'manrope';
+  font-size: large;
+  color: #abc1b5;
+  background: radial-gradient(#cfd6cd,#bac0a2);
   width: 171px;
   height: 50px;
+  border: 1px solid black;
   border-radius: 50px;
 }
-
+@keyframes button-animate{
+  0%{
+    transform: translateX(-200px);
+  }
+  100%{
+    transform: translateX(0px);
+  }
+}
