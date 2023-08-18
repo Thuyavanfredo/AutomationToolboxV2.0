@@ -1,0 +1,243 @@
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://bossanova.uk/jspreadsheet/v4/jexcel.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jspreadsheet/v4/jexcel.css" type="text/css" />
+<script src="https://jsuites.net/v4/jsuites.js"></script>
+<link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+<link rel="stylesheet" href="style.css">
+
+<body>
+  <div class="bts">
+    <div class="image">
+      <img src="img\house.png" onclick="window.location.replace('index.html');">
+    </div>
+    <!-- <button class="bt1" onclick="window.open('main.html','_self')"></button> -->    
+    <div class="bts">
+      <button class="bt">Create Table</button>
+      <button class="bt">Create D&A Table</button>
+      <button class="bt">Create Steplist</button>
+      <button class="bt">Create Steps</button>
+      <button class="bt">Create Figures</button>
+      <button class="bt" type="reset" onclick="window.location.replace(window.location.href)">Clear</button>
+    </div>
+    <div class="save">
+      <p>To save as local file <font color=#FFFF00;>Press CTRL + S</font></p>
+    </div>
+    <div class="note">
+      <font color=white>
+        By default Page-wide type for graphics is enabled. For Column-wide type select the check box. Alphabets are case sensitive.
+      </font>
+    </div>
+  </div>
+  <div id="spreadsheet"></div>
+              <!-- Modal HTML embedded directly into document -->
+              <div id="ex1" class="modal">
+                <p>Script has been generated</p>
+                <button><a style="text-decoration:none;" href="#" rel="modal:close">Close</a></button>
+              </div>
+              <!-- Link to open the modal -->
+              <p class="modalopen"><a href="#ex1" rel="modal:open">Open Modal</a></p>
+                  </div>
+</body>
+<script>
+  var data = [
+  ];
+
+  var columns=[
+    {
+        type: 'text',
+        title:'Item',
+        width:50
+    },
+    {
+        type: 'text',
+        title:'Qty',
+        width:50
+    },
+    {
+        type: 'text',
+        title:'Part Number',
+        width:180
+    },
+    {
+        type: 'text',
+        title:'Specification',
+        width:110
+    },
+    {
+        type: 'text',
+        title:'Weight',
+        width:90
+    },
+    {
+        type: 'text',
+        title:' ',
+        width:90
+    },
+    {
+      type: 'text',
+      title:'Graphics Control number',
+      width:200
+    },
+    {
+      type: 'checkbox',
+      title:'Column Wide',
+      width:100
+    }
+  ]
+
+  for(let x=0; x<=200; x++){
+    data.push(["","","","","",""])
+  }
+
+  var numberOfItems=25
+
+  for(let y=0; y<=numberOfItems; y++){
+    columns.push({
+      type: 'text',
+      title: 'Item no.',
+      width:60
+    })
+  }
+  
+  jspreadsheet(document.getElementById('spreadsheet'), {
+      data:data,
+      columns: columns,
+  });
+
+  $(document).ready(function(){
+    function getPN(item){
+      if (String(item[2]).includes("-")){
+        return (String(item[2]).toUpperCase())
+      }
+      let lastPart = String(String(item[2]).substring(String(item[2]).length-4))
+      let lastResult = lastPart.toUpperCase()
+      let firstPart = String(String(item[2]).substring(0, String(item[2]).length-4))
+      let firstResult = firstPart.toUpperCase()
+      let PN = firstResult+"-"+lastResult
+      console.log(PN)
+      return PN
+    }
+    $("button:eq(0)").click(function(){
+        console.log(JSON.stringify(data))
+        var prefix = `<table frame="all" id="i09415682.5"> <tgroup align="center" cols="4"> <colspec colname="col1" colwidth="0.70*"/> <colspec colname="col2" colwidth="0.75*"/> <colspec colname="col3" colwidth="1.18*"/> <colspec colname="col4" colwidth="1.38*"/> <thead> <row valign="middle"> <entry nameend="col4" namest="col1"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Required Parts</para></entry> </row> <row valign="middle"> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt"?><para>Item</para></entry> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Qty</para></entry> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Number</para></entry> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Name</para></entry> </row> </thead> <tbody>`
+        var suffix = `</tbody></tgroup></table>`
+        var innerText = ""
+        data.map((item, index)=>{
+         if(item[0]&&item[1]&&item[2]){
+            console.log(index, item[2])
+            let PN = getPN(item)
+            innerText+=`<row valign="middle"> <entry colname="col1"><para>${item[0]}</para></entry> <entry colname="col2"><para>${item[1]}</para></entry> <entry colname="col3"><para><partno>${PN}</partno></para></entry> <entry colname="col4"><para><cpn></cpn></para></entry> </row>`
+        }else{
+            return
+          }
+        })
+        console.log(prefix, innerText, suffix)
+        navigator.clipboard.writeText(prefix+innerText+suffix);
+      $(".modalopen a").click()
+    })
+    $("button:eq(1)").click(function(){
+        console.log(JSON.stringify(data))
+        var prefix = `<table frame="all" id="i09608397.3"> <tgroup align="center" cols="4"> <colspec colname="col1"/> <colspec colname="col2"/> <colspec colname="col3"/> <colspec colname="col4"/> <thead> <row> <entry nameend="col4" namest="col1" valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Required Parts</para></entry> </row> <row> <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt"?><para>Item</para></entry> <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Qty</para></entry> <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Number</para></entry> <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Name</para></entry> </row> </thead> <tbody>`
+        var suffix = `</tbody></tgroup></table>`
+        var innerText = ""
+        data.map((item, index)=>{
+          if(item[0]&&item[1]&&item[2]||item[3]||item[4]){
+            console.log(index, item[2])
+            let PN = getPN(item)
+            innerText+=`<row valign="middle"> <entry colname="col1"><para>${item[0]}</para></entry> <entry colname="col2"><para>${item[1]}</para></entry> <entry colname="col3"><para><partno>${PN}</partno></para></entry> <entry colname="col4"><para><cpn></cpn></para></entry><entry colname="col5"><para>${item[3]}</para></entry><entry colname="col6"><para>${item[4]}</para></entry> </row>`
+          }else{
+            return
+          }
+        })
+        console.log(prefix, innerText, suffix)
+        navigator.clipboard.writeText(prefix+innerText+suffix);
+      $(".modalopen a").click()
+    })
+    $("button:eq(4)").click(function(){
+      let figureOut = ""
+      data.map((item)=>{
+        if(item[6]){
+          let figurePreffix =`<figure figure-style="${item[7]?'column-wide':'page-wide'}" id="i06804732.${item[6]}"><graphic controlno="${item[6]}" href="x-wc://file=${item[6]}.cvx"/> `
+          let figureSuffix=`</figure>`
+          let figureMiddle=""
+          // let forceStop=false
+          item.slice(8,item.length).map((a)=>{
+            if(a){
+              data.map((b)=>{
+                if(a==b[0]){
+                  let PN = getPN(b)
+                  figureMiddle+=`<callpara><callout>${a}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
+                }
+              })
+            }
+          })
+          if(figureMiddle){figureMiddle='<caption> <callist>'+figureMiddle+'</callist></caption>'}
+          figureOut+=(figurePreffix+figureMiddle+figureSuffix)
+        } else {
+          return
+        }
+      })
+    console.log(figureOut)
+    navigator.clipboard.writeText(figureOut);
+    $(".modalopen a").click()
+    })
+    $("button:eq(3)").click(function(){
+      let figureOut = ""
+      data.map((item)=>{
+        if(item[6]){
+          let figurePreffix =`<step id="i06804732.9"><figure figure-style="${item[7]?'column-wide':'page-wide'}" id="i06804732.${item[6]}"><graphic controlno="${item[6]}" href="x-wc://file=${item[6]}.cvx"/> `
+          let figureSuffix=`</figure><para></para></step>`
+          let figureMiddle=""
+          // let forceStop=false
+          item.slice(8,item.length).map((a)=>{
+            if(a){
+              data.map((b)=>{
+                if(a==b[0]){
+                  let PN = getPN(b)
+                  figureMiddle+=`<callpara><callout>${a}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
+                }
+              })
+            }
+          })
+          if(figureMiddle){figureMiddle='<caption> <callist>'+figureMiddle+'</callist></caption>'}
+          figureOut+=(figurePreffix+figureMiddle+figureSuffix)
+        } else {
+          return
+        }
+      })
+    navigator.clipboard.writeText(figureOut);
+    $(".modalopen a").click()
+    })
+    $("button:eq(2)").click(function(){
+      let figureOut = ""
+      data.map((item)=>{
+        if(item[6]){
+          let figurePreffix =`<step id="i06804732.9"><figure figure-style="${item[7]?'column-wide':'page-wide'}" id="i06804732.${item[6]}"><graphic controlno="${item[6]}" href="x-wc://file=${item[6]}.cvx"/> `
+          let figureSuffix=`</figure><para></para></step>`
+          let figureMiddle=""
+          // let forceStop=false
+          item.slice(8,item.length).map((a)=>{
+            if(a){
+              data.map((b)=>{
+                if(a==b[0]){
+                  let PN = getPN(b)
+                  figureMiddle+=`<callpara><callout>${a}</callout><para><cpn-id><partno>${PN}</partno><cpn></cpn></cpn-id></para></callpara>`
+                }
+              })
+            }
+          })
+          if(figureMiddle){figureMiddle='<caption> <callist>'+figureMiddle+'</callist></caption>'}
+          figureOut+=(figurePreffix+figureMiddle+figureSuffix)
+        } else {
+          return
+        }
+      })
+    navigator.clipboard.writeText("<steplist>"+figureOut+"</steplist>");
+    $(".modalopen a").click()
+    })
+  })
+</script>
+</html>

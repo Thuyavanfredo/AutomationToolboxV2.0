@@ -1,0 +1,119 @@
+html,body {
+  margin: 0;
+  width: 900px;
+  height: 600px;
+  display: flex;
+  background: #eef2f6;
+  -webkit-app-region: no-drag;
+}
+@font-face {
+  font-family: "Avenir";
+  src: url(../fonts/AvenirLTStd-Black.otf);
+}
+.container{
+  margin: 30px 10px 10px 0px;
+  z-index: 1;
+  width: 852px;
+  height: 568px;
+  background: linear-gradient(103deg,#fbba4c,#abc1b5 87%);
+}
+.content {
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+nav{
+  display: flex;
+  flex-direction: column;
+  justify-content:space-evenly;
+  flex-wrap:nowrap;
+  height: 640px;
+  width: 35px;
+
+}
+nav button{
+  z-index: 1;
+  position: fixed;
+  color: #5b6876;
+  font-family:"Avenir";
+  font-size:larger;
+  margin: 0;
+  left: -45px;
+  width: 130px;
+  height: 36px;
+  background: #aec1b1;
+  transform:rotate(-90deg);
+  border: none;
+  border-radius: 10px 10px 0px 0px;
+  transition: all 0.3s ease;
+}
+button:hover{
+  background: #fbba4c;
+  color: #e8ecea;
+}
+.icon-container {
+  margin: 30px 0px 0px 200px;
+  width: 100%;
+  height: 55px;
+}
+.icon {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 30px;
+  transition: transform 0.5s ease;
+  /* overflow: hidden; */
+}
+.icon::before, .icon::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  transition: all 0.25s ease;
+  border-radius: 30px;
+}
+.icon i {
+  position: relative;
+  color: #e8ecea;
+  font-size: 30px;
+  margin-top: 6px;
+  transition: all 0.25s ease;
+}
+.icon:hover {
+  transform: scale(1.2);
+}
+.icon-expand::after {
+  box-shadow: inset 0 0 0 1px #2d2c3e;
+}
+.icon-expand::before {
+  background: #fbba4c;
+  box-shadow: inset 0 0 0 60px #2d2c3e;
+}
+.icon-expand:hover::before {
+  color: white;
+  box-shadow: inset 0 0 0 1px #2d2c3e;
+}
+.body{
+  display: flex;
+  width: 814px;
+  height: 452px;
+  margin-left: 30px;
+  display: flex;
+}
+.video{
+  top: 170px;
+  left: 620px;
+  position: absolute;
+  border: 1px solid white;
+  background: radial-gradient(#cfd6cd,#bac0a2);
+  border-radius: 20px;
+  width: 229px;
+  height: 155px;
+}
+
