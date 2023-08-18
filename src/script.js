@@ -640,7 +640,12 @@ $(document).ready(function () {
             </ul>
         </div>
 </form>`);
-      $(".body").css("background-image", "none");
+        $(".body").css({
+          "background-image":"none",
+          "width": "814px",
+          "transform": "translateX(0px)",
+          "transition":"all 0.5s linear",
+        });
       $(".pdt-btns, .spec-btns").hide();
       $(".da-btns").hide();
       $(".video").hide();
@@ -679,7 +684,12 @@ $(document).ready(function () {
             </ul>                                  
       </div>
     </form>`);
-    $(".body").css("background-image", "none");
+    $(".body").css({
+      "background-image":"none",
+      "width": "814px",
+      "transform": "translateX(0px)",
+      "transition":"all 0.5s linear",
+    });
     $(".pdt-btns, .spec-btns").hide();
     $(".da-btns").hide();
     $(".video").hide();

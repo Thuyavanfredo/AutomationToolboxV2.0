@@ -50,6 +50,10 @@ button:hover{
   color: #e8ecea;
   scale: 1.05;
 }
+button:focus{
+  background: #fbba4c;
+  color: #e8ecea;
+}
 .icon-container {
   margin: 30px 0px 0px 200px;
   width: 100%;
@@ -125,8 +129,8 @@ button:hover{
   transition: all 0.75s ease;
 }
 #video{
-  top: 50px;
-  left: 555px;
+  top: 55px;
+  left: 554px;
   position: absolute;
   border: 1px solid white;
   background: radial-gradient(#cfd6cd,#bac0a2);
