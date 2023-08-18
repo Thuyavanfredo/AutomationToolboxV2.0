@@ -162,6 +162,25 @@ button{
   border: 1px solid black;
   border-radius: 50px;
 }
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 814px;
+  height: 200px;
+  font-size: 18px;
+  font-family: manrope;
+  color: #ffffff;
+}
+.contact p{
+  font-size: 24px;
+  font-family: manrope;
+  color: #ffffff;
+}
+ul{
+  list-style: none;
+}
 @keyframes button-animate{
   0%{
     transform: translateX(-200px);
