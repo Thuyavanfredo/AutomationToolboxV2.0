@@ -7,14 +7,14 @@ const fs = require("fs")
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
-fs.mkdir("C:/Automation Toolbox", function(err) {
+fs.mkdir("C:/Automation Toolboxv3.0", function(err) {
   if (err) {
     console.log(err)
   } else {
     console.log("New directory successfully created.")
   }
 })
-log.transports.file.resolvePath = () => path.join("C:/Automation Toolbox", '/logs/main.log');
+log.transports.file.resolvePath = () => path.join("C:/Automation Toolboxv3.0", '/logs/main.log');
 log.log("Application version"+ app.getVersion())
 log.info('Hello, log');
 
@@ -25,7 +25,7 @@ if (require('electron-squirrel-startup')) {
 }
 function handleSetTitle (event, title) {
   var child = require('child_process').execFile;
-  var executablePath = "./resources/Effectivity Macro 2.07.exe";
+  var executablePath = ".img/Effectivity Macro 2.07.exe";
   
   child(executablePath, function(err, data) {
       if(err){
