@@ -205,81 +205,74 @@ $(document).ready(function () {
       });
     });
     $(".bt:eq(1)").click(function () {
-      $(".home").html(`<form id="form" class="xref">
-          <div class="main">
-              <div class="IEno">
-                  <label>IE Control Number</label>
-                  <input required type="text" placeholder="Enter IE Control Number" name="IE">
-              </div>
-              <div class="IDno">
-                  <label>ID Control Number</label>
-                  <input required type="text" placeholder="Enter ID Control Number" name="ID">
-              </div>
-              <div class="xrtype">
-                  <div class="xreftype">
-                      <label class="gt">Reference Tag Type</label>
-                  </div>
-                  <div class="radio1">
-                      <div class="list2">
-                          <div  class="list">
-                              <input class ="r" value=0 type="radio" required name="radio">
-                              <label  class="label">Figure</label>
-                          </div>
-                          <div class="list">
-                              <input class ="r" value=1 type="radio" name="radio">
-                              <label class="label">Table</label>
-                          </div>
-                      </div>
-                      <div class="list2">
-                          <div class="list">
-                              <input class ="r" value=2 type="radio" name="radio">
-                              <label class="label">Step</label>
-                          </div>
-                          <div class="list">
-                              <input class ="r" value=3 type="radio" name="radio">
-                              <label class="label">Footnote</label>
-                          </div>
-                      </div>
-                      <div class="list2">
-                          <div class="list">
-                              <input class ="r" value=4 type="radio" name="radio">
-                              <label class="label">Section</label>
-                          </div>
-                      </div>
-                  </div>
-              </div>
+      $(".body").html(`<form id="form" class="xref">
+      <div class="xref-container">
+      <div class="xno">
+            <div class="x-ref">
+                <label class="xtitle">IE Control Number</label>
+                <input type="text" required placeholder="Enter IE Control Number" name="IE">
+            </div>
+            <div class="x-ref1">
+                <label class="xtitle">ID Control Number</label>
+                <input type="text" required placeholder="Enter ID Control Number" name="ID">
+            </div>
+      </div>
+      <div class="xtype">
+          <div class="xtitle">Select Xref Tag Type</div>
+          <div class="xtype1">
+              <ul>
+                  <li>
+                      <input type="radio" name="XREF" value="0">
+                      <label>Figure</label>
+                  </li>
+                  <li>
+                      <input type="radio" name="XREF" value="1">
+                      <label>Step</label>
+                  </li>
+                  <li>
+                      <input type="radio" name="XREF" value="2">
+                      <label>Footnote</label>
+                  </li>
+                  <li>
+                      <input type="radio" name="XREF" value="3">
+                      <label>Table</label>
+                  </li>
+                  <li>
+                      <input type="radio" name="XREF" value="4">
+                      <label>Section</label>
+                  </li>
+              </ul>
           </div>
-              <div class="bt1">
-                  <button type="submit">Generate</button>
-                  <button type="reset">Clear</button>
-              </div>
+      </div>
+      <div class="xsubmit">
+          <button type="submit">Generate</button>
+          <button type="reset">Clear</button>
+      </div>
+  </div> 
           </form>`);
-      $(".home").css("background-image", "none");
       $("#form").submit(function (e) {
         e.preventDefault();
         const formData = new FormData(e.target);
         const formProps = Object.fromEntries(formData);
         const templates = [
-          '<xref format="dita" href="#./IE.ID"scope="local" type="figure"></xref>',
-          '<xref format="dita" href="#./IE.ID"scope="local" type="table"></xref>',
-          '<xref format="dita" href="#./IE.ID"scope="local" type="step"></xref>',
-          '<xref format="dita" href="#./IE.ID"scope="local" type="fn"></xref>',
-          '<xref format="dita" href="#./IE.ID"scope="local" type="sect"></xref>',
+          'Illustration <xref format="dita" href="#./IE.ID"scope="local" type="figure"></xref>',
+          'Step <xref format="dita" href="#./IE.ID"scope="local" type="step"></xref>',
+          'Footnote <xref format="dita" href="#./IE.ID"scope="local" type="fn"></xref>',
+          'Table <xref format="dita" href="#./IE.ID"scope="local" type="table"></xref>',
+          'Section <xref format="dita" href="#./IE.ID"scope="local" type="sect"></xref>',
         ];
         if (formProps.length <= 0) {
           alert("Please enter Graphic Control Number");
           return;
         }
-        // const x=templates[formProps.radio].join(formProps.graphics)
-        const w = (templates[formProps.radio]).split("IE");
+        const w = (templates[formProps.XREF]).split("IE");
         const x = w.join(formProps.IE);
         const y = x.split("ID");
         const z = y.join(formProps.ID);
         navigator.clipboard.writeText(z);
         console.log(z)
-        $(".modalopen a").click()
       });
-      $(".bt1 button:nth-child(2)").click(function (e) {
+      $(".submit button:nth-child(2)").click(function (e) {
         $("#form").trigger("reset");
       });
     });

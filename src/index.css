@@ -47,7 +47,7 @@ nav button{
   border-radius: 10px 10px 0px 0px;
   transition: scale 0.5s ease;
 }
-.submit button:hover, button:hover{
+.submit button:hover, .xsubmit button:hover, button:hover{
   background: #fbba4c;
   border: 1px solid white;
   color: #e8ecea;
@@ -224,7 +224,15 @@ button{
   top: 45px;
   left: 5px;
 }
-.graphic-container ul{
+.xref-container{
+  display: flex;
+  flex-direction: column;
+  align-content: space-evenly;
+  position: absolute;
+  top: 0px;
+  left: 5px;
+}
+.graphic-container ul, .xref-container ul{
   list-style: none;
   display: grid;
   width: 550px;
@@ -248,26 +256,45 @@ button{
   border-radius: 15px;
   background: #e1e2e2;
 }
+.xno input{
+  width: 410px;
+  height: 26px;
+  border: none;
+  border-radius: 15px;
+  background: #e1e2e2;
+}
 .gno{
   display: flex;
   flex-direction: row;
 }
-.gno input::placeholder {
+.xno{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  height: 120px;
+}
+.xref{
+  margin: 50px;
+}
+.gno input,.xno input::placeholder {
   padding-left: 10px;
 }
 .gtype{
   margin: 80px 0px 0px 0px;
 }
-.gtype1{
+.xtype{
+  margin: 48px 0px 0px 0px;
+}
+.gtype1,.xtype1{
   margin: 0px 0px 0px 20px;
 }
 .gtype1 input{
   margin: 0px 0px 0px -20px;
 }
-.gtitle{
+.gtitle, .xtitle{
   margin: 0px 40px 10px 0px;
   width: fit-content;
-  color: #383838;
+  color: #565946;
   font-size: 18px;
   font-weight: bold;
   font-family: 'Avenir';
@@ -279,7 +306,14 @@ button{
   position: relative;
   top: 30px;
 }
-.submit button{
+.xsubmit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+  top: 19px;
+}
+.submit button, .xsubmit button{
   width: 134px;
   height: 38px;
   padding: 0px 0px;
