@@ -37,6 +37,7 @@ nav button{
   font-family:"Avenir";
   font-size:larger;
   margin: 0;
+  opacity: 1;
   left: -45px;
   width: 130px;
   height: 36px;
@@ -44,11 +45,13 @@ nav button{
   transform:rotate(-90deg);
   border: none;
   border-radius: 10px 10px 0px 0px;
+  transition: scale 0.5s ease;
 }
 button:hover{
   background: #fbba4c;
+  border: 1px solid white;
   color: #e8ecea;
-  scale: 1.05;
+  scale: 1.07;
 }
 button:focus{
   background: #fbba4c;
@@ -154,13 +157,15 @@ button:focus{
 button{
   padding: 0px 0px;
   font-family: 'manrope';
-  font-size: large;
-  color: #abc1b5;
-  background: radial-gradient(#cfd6cd,#bac0a2);
-  width: 171px;
-  height: 50px;
-  border: 1px solid black;
-  border-radius: 50px;
+  font-size: 22px;
+  color: #9d835a;
+  background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
+  border: none;
+  opacity: 0.59;
+  width: 174px;
+  height: 49px;
+  border-radius: 40px;
+  transition: all 0.5s ease;
 }
 .contact {
   display: flex;
@@ -181,26 +186,34 @@ button{
 ul{
   list-style: none;
 }
+.form {
+  width: 100%;
+}
 .info {
   display: flex;
   flex-direction: column;
-  justify-content:space-around;
+  justify-content:space-between;
+  position: relative;
+  width: 814px;
+  height: 452px;
+  top: 0px;
+  left: 0px;
   font-family: manrope;
   font-size: 18px;
   color: #ffffff;
-  margin: 10px 5px 0 25px;
 }
-.names {
+/* .names {
   display: grid;
-  grid-row: 2;
-  grid-column: 2;
-  width: 10px;
-  height: 10px;
+  grid-template-columns: 250px;
+  grid-template-rows: 100px;
   padding: -12px 0px 0px 0;
-  margin-left: 0px;
   font-family: manrope;
   font-size: 14px;
 }
+.name-align{
+  width: 250px;
+  height: 100px;
+} */
 @keyframes button-animate{
   0%{
     transform: translateX(-200px);

@@ -42,36 +42,61 @@ $(document).ready(function () {
       targetElement.className="body";
       $(".body").html(`<form id="form">
       <div class="info">
-        <p>Automation tool box combines all the exisiting automations in SID into once place</p>
-        <p>Thanks to all the individuals who have contributed</p>
-        <div class="names">
-            <strong>Graphic Insert Tool</strong>
-            <ul>
-                <li>Dineshkumar Krishnamoorthy</li>
-                <li>Sathesh Thanapaul</li>
-            </ul>
-            <strong>Xref Insert Tool</strong>
-            <ul>
-                <li>Kanakaraj Mayilswamy</li>
-                <li>Sathesh Thanapaul</li>
-            </ul>
-            <strong>Steplist Creator Tool</strong>
-            <ul>
-                <li>Kanakaraj Mayilswamy</li>
-                <li>Thuyavan Tamilarasan</li>
-            </ul>
-            <strong>Metric Conversion Tool</strong>
-            <ul>
-                <li>Paulvin Joseph</li>
-                <li>Zackriya Thajudeen</li>
-                <li>Prabhu Vijayan</li>
-            </ul>
-            <strong>Prefix Update Tool</strong>
-                <ul>
-                    <li>Jarett Karnia</li> 
-                </ul>                                  
-        </div>
+      <div class="names-title">
+      <p>Automation tool box combines all the exisiting automations in SID into once place</p>
+      <p>Thanks to all the individuals who have contributed</p>
       </div>
+      <div class="names">
+          <div class="name-align">
+              <strong>Graphic Insert Tool</strong>
+              <ul>
+                  <li>Dineshkumar Krishnamoorthy</li>
+                  <li>Sathesh Thanapaul</li>
+              </ul>
+          </div>
+          <div class="name-align">
+              <strong>Xref Insert Tool</strong>
+              <ul>
+                  <li>Kanakaraj Mayilswamy</li>
+                  <li>Sathesh Thanapaul</li>
+              </ul>
+          </div>
+          <div class="name-align">
+              <strong>Steplist Creator Tool</strong>
+              <ul>
+                  <li>Kanakaraj Mayilswamy</li>
+                  <li>Thuyavan Tamilarasan</li>
+              </ul>
+          </div>
+          <div class="name-align">
+              <strong>Metric Conversion Tool</strong>
+              <ul>
+                  <li>Paulvin Joseph</li>
+                  <li>Zackriya Thajudeen</li>
+                  <li>Prabhu Vijayan</li>
+              </ul>
+          </div>
+          <div class="name-align">
+              <strong>Prefix Update Tool</strong>
+              <ul>
+                  <li>Jarett Karnia</li> 
+              </ul> 
+          </div>
+          <div class="name-align">
+              <strong>Weight calculator Tool</strong>
+              <ul>
+                  <li>Gokul Chandrasekaran</li> 
+              </ul> 
+          </div> 
+          <div class="name-align">
+              <strong>BookScan</strong>
+              <ul>
+                  <li>Simon Santhosh</li> 
+                  <li>Thuyavan</li> 
+              </ul> 
+          </div>                          
+      </div>
+  </div>
     </form>`);
     $(".body").css({
       "background-image":"none",
@@ -700,7 +725,7 @@ $(document).ready(function () {
       $(".body").html("");
       $(".body").css({
           "background-image": "none",
-          "width": "625px",
+          "width": "626px",
           "transition":"all 0.5s linear",
           "transform": "translateX(180px)"
       });
@@ -713,7 +738,7 @@ $(document).ready(function () {
       $(".body").html("");
       $(".body").css({
           "background-image": "none",
-          "width": "625px",
+          "width": "626px",
           "transition":"all 0.5s linear",
           "transform": "translateX(180px)"
       });
@@ -726,7 +751,7 @@ $(document).ready(function () {
       $(".body").html("");
       $(".body").css({
           "background-image": "none",
-          "width": "625px",
+          "width": "626px",
           "transition":"all 0.5s linear",
           "transform": "translateX(180px)"
       });
