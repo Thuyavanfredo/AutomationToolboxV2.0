@@ -25,7 +25,7 @@ if (require('electron-squirrel-startup')) {
 }
 function handleSetTitle (event, title) {
   var child = require('child_process').execFile;
-  var executablePath = "./resources/Effectivity Macro 2.06.exe";
+  var executablePath = "./resources/Effectivity Macro 2.07.exe";
   
   child(executablePath, function(err, data) {
       if(err){
@@ -41,6 +41,7 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 920,
     height: 640,
+    icon: path.join(__dirname, 'img/android-chrome-512x512.png'),
     titleBarStyle: 'hidden',
     // titleBarOverlay: true,
     // frame: false,
