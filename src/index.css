@@ -202,10 +202,11 @@ ul{
   font-size: 18px;
   color: #ffffff;
 }
-/* .names {
+.names {
   display: grid;
-  grid-template-columns: 250px;
-  grid-template-rows: 100px;
+  grid-template-columns: 250px 250px 250px;
+  grid-template-rows: 100px 100px;
+  justify-content: center;
   padding: -12px 0px 0px 0;
   font-family: manrope;
   font-size: 14px;
@@ -213,7 +214,7 @@ ul{
 .name-align{
   width: 250px;
   height: 100px;
-} */
+}
 @keyframes button-animate{
   0%{
     transform: translateX(-200px);
