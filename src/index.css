@@ -55,6 +55,7 @@ button:hover{
 }
 button:focus{
   background: #fbba4c;
+  border: 1px solid white;
   color: #e8ecea;
 }
 .icon-container {
