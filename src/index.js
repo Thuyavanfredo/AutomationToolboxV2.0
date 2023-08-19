@@ -1,6 +1,6 @@
-const { app, BrowserWindow } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
-const {autoUpdater}=require("electron-updater")
+const { autoUpdater } = require("electron-updater")
 const log = require('electron-log');
 const fs = require("fs")
 
@@ -25,7 +25,7 @@ if (require('electron-squirrel-startup')) {
 }
 function handleSetTitle (event, title) {
   var child = require('child_process').execFile;
-  var executablePath = ".img/Effectivity Macro 2.07.exe";
+  var executablePath = "./img/Effectivity Macro 2.07.exe";
   
   child(executablePath, function(err, data) {
       if(err){
@@ -68,7 +68,7 @@ const createWindow = () => {
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
-};
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.

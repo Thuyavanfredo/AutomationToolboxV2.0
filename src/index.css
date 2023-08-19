@@ -5,6 +5,7 @@ html,body {
   display: flex;
   background: #eef2f6;
   -webkit-app-region: no-drag;
+  overflow: hidden;
 }
 @font-face {
   font-family: "Avenir";
@@ -12,6 +13,7 @@ html,body {
 }
 .container{
   margin: 30px 10px 10px 0px;
+  position: relative;
   z-index: 1;
   width: 852px;
   height: 568px;
@@ -34,8 +36,9 @@ nav button{
   z-index: 1;
   position: fixed;
   color: #5b6876;
-  font-family:"Avenir";
-  font-size:larger;
+  font-family:"manrope";
+  font-size:large;
+  font-weight: bold;
   margin: 0;
   opacity: 1;
   left: -45px;
@@ -47,7 +50,7 @@ nav button{
   border-radius: 10px 10px 0px 0px;
   transition: scale 0.5s ease;
 }
-.submit button:hover, .xsubmit button:hover, button:hover{
+.submit button:hover, .xsubmit button:hover, .ssubmit button:hover, button:hover{
   background: #fbba4c;
   border: 1px solid white;
   color: #e8ecea;
@@ -62,6 +65,11 @@ button:focus{
   margin: 30px 0px 0px 200px;
   width: 100%;
   height: 55px;
+  position: relative;
+  justify-content: center;
+  align-content: center;
+  top: 0;
+  left: 0;
 }
 .icon {
   cursor: pointer;
@@ -74,7 +82,29 @@ button:focus{
   border-radius: 30px;
   transition: transform 0.5s ease;
 }
-.icon::before {
+.icon1 {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+.icon2 {
+  cursor: pointer;
+  position: relative;
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  margin-left: 12px;
+  margin-right: 12px;
+  border-radius: 30px;
+  transition: all 0.5s ease;
+}
+.icon::before, .icon1::before,.icon2::before {
   content: "";
   position: absolute;
   top: 0;
@@ -84,7 +114,7 @@ button:focus{
   transition: all 0.25s ease;
   border-radius: 30px;
 }
-.icon i {
+.icon i, .icon1 i, .icon2 i {
   position: relative;
   color: #e8ecea;
   font-size: 30px;
@@ -111,7 +141,7 @@ button:focus{
   margin-left: 30px;
   transition: all 0.5s linear;
 }
-.pdt-body{
+/* .pdt-body{
   display: flex;
   border: 2px solid white;
   background-size:cover;
@@ -120,10 +150,10 @@ button:focus{
   width: 625px;
   transition: all 0.5s linear;
   transform: translateX(200px);
-}
+} */
 .video{
-  top: 170px;
-  left: 620px;
+  top: 150px;
+  left: 600px;
   position: absolute;
   border: 1px solid white;
   background: radial-gradient(#cfd6cd,#bac0a2);
@@ -133,9 +163,9 @@ button:focus{
   transition: all 0.75s ease;
 }
 #video{
-  top: 55px;
-  left: 554px;
   position: absolute;
+  top: 60px;
+  left: 554px;
   border: 1px solid white;
   background: radial-gradient(#cfd6cd,#bac0a2);
   border-radius: 20px;
@@ -273,8 +303,11 @@ button{
   justify-content: space-evenly;
   height: 120px;
 }
-.xref{
-  margin: 50px;
+.x-ref{
+  margin: 50px 0px 0px 0px;
+}
+.x-ref1{
+  margin: 50px 0px 0px 0px;
 }
 .gno input,.xno input::placeholder {
   padding-left: 10px;
@@ -313,7 +346,14 @@ button{
   position: relative;
   top: 19px;
 }
-.submit button, .xsubmit button{
+.ssubmit{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+  top: 5px;
+}
+.submit button, .xsubmit button, .ssubmit button{
   width: 134px;
   height: 38px;
   padding: 0px 0px;
@@ -325,6 +365,45 @@ button{
   border-radius: 40px;
   transition: all 0.5s ease;
 }
+.spec{
+  width: 626px;
+  height: 430px;
+  display: flex;
+  flex-direction: row;
+  column-gap: 50px;
+  justify-content: space-around;
+  align-items: center;
+}
+textarea{
+  width: 250px;
+  height: 400px;
+  border: none;
+  border-radius: 15px;
+  background: #e1e2e2;
+}
+textarea::placeholder{
+  text-align: center;
+  padding-top: 180px;
+  font-family: 'Avenir';
+}
+h1 .reveal{
+  display: block;
+  animation: textreveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s;
+  transition: all 3s ease-in-out;
+}
+.text-title{
+  position: absolute;
+  top: 10px;
+  left: 250px;
+  max-width: 325px;
+  align-content: center; 
+  transition: all 1s ease; 
+}
+h1{
+  font-family: 'Avenir';
+  color: #615648;
+  overflow: hidden;
+}
 /* input[type='radio']{
   accent-color: Yellow;
 } */
@@ -334,5 +413,15 @@ button{
   }
   100%{
     transform: translateX(0px);
+  }
+}
+@keyframes textreveal{
+  0%{
+      transform: translate(-300px,0);
+      opacity: 0;
+  }
+  100%{
+      transform: translate(0,0);
+      opacity: 1;
   }
 }
