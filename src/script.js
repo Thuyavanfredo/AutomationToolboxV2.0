@@ -1080,5 +1080,10 @@ $(document).ready(function () {
     $(".pdt-btns").hide();
     $(".spec-btns").hide();
     $(".da-btns").show();
+    $("#weight").click(function () {
+       $(".body").html(`<embed type="text/html" src="https://engineeringautomation.ecorp.cat.com/eatcui/PNWC/" 
+          style="width: 100%;
+                height: 100%;">`);
+    });
   });
 });
