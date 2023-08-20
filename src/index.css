@@ -51,7 +51,7 @@ nav button{
   border-radius: 10px 10px 0px 0px;
   transition: scale 0.5s ease;
 }
-.submit button:hover, .xsubmit button:hover, .ssubmit button:hover, button:hover{
+.submit button:hover, .xsubmit button:hover, .ssubmit button:hover, button:hover, .msubmit-da button:hover{
   -webkit-app-region: no-drag;
   background: #fbba4c;
   border: 1px solid white;
@@ -144,7 +144,7 @@ button:focus{
 .body{
   -webkit-app-region: no-drag;
   display: flex;
-  border: 2px solid white;
+  border: 1px solid #eae3cb;
   background: url("../img/main_page_low.gif");
   background-size:cover;
   border-radius: 10px;
@@ -327,7 +327,7 @@ button{
 .x-ref1{
   margin: 50px 0px 0px 0px;
 }
-.gno input,.xno input::placeholder {
+.gno input,.xno input,.metric-items input::placeholder {
   padding-left: 10px;
 }
 .gtype{
@@ -377,7 +377,15 @@ button{
   position: relative;
   top: 5px;
 }
-.submit button, .xsubmit button, .ssubmit button{
+.msubmit-da{
+  -webkit-app-region: no-drag;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: relative;
+  top: 10px;
+}
+.submit button, .xsubmit button, .ssubmit button, .msubmit-da button{
   -webkit-app-region: no-drag;
   width: 134px;
   height: 38px;
@@ -415,28 +423,25 @@ textarea::placeholder{
   color: #565946;
   font-weight: bold;
 }
-h1 .reveal{
-  -webkit-app-region: no-drag;
-  display: block;
-  /* animation: textreveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s; */
-  transition: all 3s ease-in-out;
-}
 .text-title{
   -webkit-app-region: no-drag;
   position: absolute;
   top: 10px;
   left: 250px;
-  max-width: 325px;
+  max-width: 330px;
   align-content: center; 
-  transition: all 1s ease; 
 }
 h1{
   font-family: 'Avenir';
   color: #615648;
   overflow: hidden;
 }
-
-
+.reveal{
+  -webkit-app-region: no-drag;
+  display: block;
+  /* animation: textreveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s; */
+  transition: all 3s ease-in-out;
+}
 .metcontainer{
   display: flex;
   width: 626px;
@@ -564,7 +569,7 @@ h1{
     margin: 20px;
     background-color: #e1e2e2;
   }
-  .text span{
+  .plus span{
     color: #383838;
     font-size: 30px;
   }
@@ -572,7 +577,16 @@ h1{
     margin: 0px;
     padding: 0px;
   }
-  
+  .note{
+    position: absolute;
+    font-size: 12px;
+    color: #000000;
+    left: 25px;
+    top: 22px;
+  }
+  .note h3{
+    display: none;
+  }
    
 @keyframes button-animate{
   0%{
