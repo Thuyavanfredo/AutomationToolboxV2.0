@@ -3,20 +3,22 @@ html,body {
   width: 900px;
   height: 600px;
   display: flex;
-  background: #eef2f6;
+  position: absolute;
   -webkit-app-region: drag;
   overflow: hidden;
+  top: 0px;
+  left: 0px;
 }
 @font-face {
   font-family: "Avenir";
   src: url(../fonts/AvenirLTStd-Book.otf);
 }
 .container{
-  margin: 30px 10px 10px 0px;
   position: relative;
   z-index: 1;
   width: 852px;
   height: 568px;
+  border-radius: 10px;
   background: linear-gradient(103deg,#fbba4c,#abc1b5 87%);
 }
 .content {
@@ -29,7 +31,7 @@ nav{
   flex-direction: column;
   justify-content:space-evenly;
   flex-wrap:nowrap;
-  height: 640px;
+  height: 568px;
   width: 35px;
 }
 nav button{
@@ -165,8 +167,8 @@ button:focus{
 } */
 .video{
   -webkit-app-region: no-drag;
-  top: 150px;
-  left: 600px;
+  top: 146px;
+  left: 585px;
   position: absolute;
   border: 1px solid white;
   background: radial-gradient(#cfd6cd,#bac0a2);
@@ -605,4 +607,106 @@ h1{
       transform: translate(0,0);
       opacity: 1;
   }
+}
+.traffic-lights {
+    -webkit-app-region: no-drag;
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 838px;
+
+    .focus &, &:hover, &:active {
+        > .traffic-light-close {
+            background-color: #ff6159;
+
+            &:active:hover {
+                background-color: #bf4942;
+            }
+        }
+        > .traffic-light-minimize {
+            background-color: #ffbd2e;
+
+            &:active:hover {
+                background-color: #bf8e22;
+            }
+        }
+    }
+
+    > .traffic-light {
+        -webkit-app-region: no-drag;
+        &:before, &:after {
+            visibility: hidden;
+        }
+    }
+
+    &:hover, &:active {
+        > .traffic-light {
+            &:before, &:after {
+                visibility: visible;
+            }
+        }
+    }
+}
+.traffic-light p{
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  align-items: center;
+  width: 20px;
+  top: -13px;
+  left: -1px;
+  font-size: small;
+}
+.traffic-light {
+    border-radius: 100%;
+    padding: 0;
+    height: 20px;
+    width: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-sizing: border-box;
+    background-color: #ddd;
+    position: relative;
+    outline: none;
+
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        border-radius: 1px;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+
+    &-close {
+        &:before, &:after {
+            background-color: #4d0000;
+            width: 8px;
+            height: 1px;
+        }
+        &:before {
+            transform: rotate(45deg); 
+            /* transform: translateY(-0.5px, -0.5px); */
+        }
+        &:after {
+            transform: rotate(-45deg); 
+            /* transform: translateY(-0.5px -0.5px); */
+        }
+        &:active:hover:before, &:active:hover:after {
+            background-color: #190000;
+        }
+    }
+
+    &-minimize {
+        &:before {
+            background-color: #995700;
+            width: 8px;
+            height: 1px;
+            /* //transform: translateY(-0.5px); */
+        }
+        &:active:hover:before {
+            background-color: #bf8e22;
+        }
+    }
 }

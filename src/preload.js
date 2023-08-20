@@ -1,6 +1,6 @@
 // See the Electron documentation for details on how to use preload scripts:
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
-const { contextBridge, ipcRenderer } = require('electron')
+const { contextBridge, ipcRenderer } = require("electron");
 const { writeFile, readFile } = require("fs");
 contextBridge.exposeInMainWorld('electronAPI', {
     setTitle: (title) => ipcRenderer.send('set-title', title),
@@ -58,3 +58,11 @@ contextBridge.exposeInMainWorld('electronAPI', {
         });
     }
 })
+const API = {
+    mainWindow: {
+        close: () => ipcRenderer.send("app/close"),
+        minimize: () => ipcRenderer.send("app/minimize"),
+    },
+}
+
+contextBridge.exposeInMainWorld("app", API);
