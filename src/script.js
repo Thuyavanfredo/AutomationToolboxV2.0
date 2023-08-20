@@ -17,7 +17,7 @@ $(document).ready(function () {
       transition: "transform 0.5s linear",
     });
     $(".body").html(`
-      <video class="video" id="video" poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm"></video> 
+      <video class="video" controls id="video" poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm"></video> 
       `);
     $(".pdt-btns").hide();
     $(".spec-btns").hide();
