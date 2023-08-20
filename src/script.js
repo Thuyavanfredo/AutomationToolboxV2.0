@@ -301,87 +301,76 @@ $(document).ready(function () {
   });
   $(".bt:eq(3)").click(function () {
     $(".body").html(`<form class="metric" id="form">
-          <div class="main">
-              <div class="tol1">
-                  <label>Torque</label>
-                  <input  type="text" oninput="this.value = this.value.toLowerCase()" placeholder="Enter value" name="value">
-                  <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
-                  <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol">
-                      <div class="toggle">
-                          <input type="checkbox" name="engtomet">
-                      </div>
-              </div>
-              <div class="tol2">
-                  <label>Length (mm)</label>
-                  <input  type="text" oninput="this.value = this.value.toLowerCase()" placeholder="Enter value"  name="value1">
-                  <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
-                  <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1">
-                  <div class="toggle">
-                      <input type="checkbox" name="engtomet1">
-                  </div>
-              </div>
-              <div class="tol3">
-              <label>Length (cm)</label>
-              <input  type="text" oninput="this.value = this.value.toLowerCase()" placeholder="Enter value"  name="value1a">
-              <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
-              <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1a">
-              <div class="toggle">
-                  <input type="checkbox" name="engtomet2">
-              </div>
-          </div>
-              <div class="met">
-                  <label>Weight</label>
-                  <input type="text" placeholder="Enter value" name="value2">
-                  <div class="toggle">
-                      <input type="checkbox" name="engtomet3">
-                  </div>
-              </div>
-              <div class="tol6">
-                  <label>Temperature</label>
-                  <input  type="text" placeholder="Enter value" name="value3">
-                  <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
-                  <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1b">
-                  <div class="toggle">
-                      <input type="checkbox" name="engtomet4">
-                  </div>
-              </div>
-              <div class="tol4">
-                  <label>Flow</label>
-                  <input  type="text" placeholder="Enter value" name="value4">
-                  <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
-                  <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1c">
-                  <div class="toggle">
-                      <input type="checkbox" name="engtomet5">
-                  </div>
-              </div>
-              <div class="tol5">
-                  <label>Pressure</label>
-                  <input  type="text" placeholder="Enter value" name="value5">
-                  <img class="plus" src="img/Plus_or_minus_symbol.svg.png" width= "36px" height= "46px" alt="">
-                  <input class="input1"  type="text" placeholder="Enter tolerance value" name="tol1d">
-                  <div class="toggle">
-                      <input type="checkbox" name="engtomet6">
-                  </div>
-              </div>
-              <div class="met">
-                  <label>Volume</label>
-                  <input  type="text" placeholder="Enter value" name="value6">
-                  <div class="toggle">
-                      <input type="checkbox" id="switch" name="engtomet7">
-                  </div>
-              </div>
-          </div>
-              <div class="bt1">
-                  <button type="submit">Generate</button>
-                  <button type="reset">Clear</button>
-              </div>           
-            </div>
-            <div class="upright">
-              <h3>Metric to English</h3>
-            </div>
-            <div class="note">
-            <h3>Note: Mention <font color= yellow>ft/in</font> along with values (Eg: <font color= yellow>15ft/15in</font>)</h3>
-          </div>
+    <div class="metcontainer">
+    <div class="toggle-container">
+        <div class="toggle">
+          <input type="checkbox" name="engtomet">
+        </div>
+        <div class="upright">
+          <h3>Metric to English</h3>
+        </div>
+    </div>
+      <div class="text">
+        <div class="text-items"><p>Torque</p></div>
+        <div class="text-items"><p>Length (mm)</p></div>
+        <div class="text-items"><p>Length (cm)</p></div>
+        <div class="text-items"><p>weight</p></div>
+        <div class="text-items"><p>Temperature</p></div>
+        <div class="text-items"><p>Flow</p></div>
+        <div class="text-items"><p>pressure</p></div>
+        <div class="text-items"><p>Volume</p></div>
+      </div>
+      <div class="metric-container">
+        <div class="metric-items">
+          <input type="text" name="" id="">
+          <div class="plus">
+            <span>&plusmn</span>
+          </div> 
+          <input type="text" name="" id="">
+        </div>
+        <div class="metric-items">
+          <input type="text" name="" id="">
+          <div class="plus">
+            <span>&plusmn</span>
+          </div> 
+          <input type="text" name="" id="">
+        </div>
+        <div class="metric-items">
+          <input type="text" name="" id="">
+          <div class="plus">
+            <span>&plusmn</span>
+          </div> 
+          <input type="text" name="" id="">
+        </div>
+        <div class="metric-items">
+          <input type="text" name="" style="width:442px;">
+        </div>
+        <div class="metric-items">
+          <input type="text" name="" id="">
+          <div class="plus">
+            <span>&plusmn</span>
+          </div> 
+          <input type="text" name="" id="">
+        </div>
+        <div class="metric-items">
+          <input type="text" name="" id="">
+          <div class="plus">
+            <span>&plusmn</span>
+          </div> 
+          <input type="text" name="" id="">
+        </div>
+        <div class="metric-items">
+          <input type="text" name="" id="">
+          <div class="plus">
+            <span>&plusmn</span>
+          </div> 
+          <input type="text" name="" id="">
+        </div>
+        <div class="metric-items">
+          <input type="text" name="" style="width:442px;">
+        </div>
+      </div>
+  </div>
           </form>`);
     $(".home").css("background-image", "none");
     $("#form").submit(function (e) {
@@ -792,7 +781,7 @@ $(document).ready(function () {
     $(".toggle input").change(function (e) {
       if ($(this).is(":checked")) {
         $(".upright h3").text("English to Metric");
-        $(".upright h3").css("color", "#ca9800");
+        $(".upright h3").css("color", "#565946");
         $(".note h3").css("display", "block");
         $(".toggle input").attr("checked", true);
       } else {
@@ -820,7 +809,7 @@ $(document).ready(function () {
             <div class="ssubmit">
             <button class="bt1" type="submit" onclick="window.electronAPI.updateEvent('BookScan')">Generate</button>
             <button class="bt1" type="reset">Clear</button>
-        </div>
+            </div>
   </form>`);
     $("#form").submit(function (e) {
       e.preventDefault();
