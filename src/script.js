@@ -173,12 +173,27 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <div class="submit">
-                    <button type="submit" onclick="window.electronAPI.updateEvent('graphic')">Generate</button>
+                    <button type="submit" onclick="window.electronAPI.updateEvent('graphic')" id="btn">
+                      <p id="btnText">Generate</p>
+                      <div class="checked">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                          <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                        </svg>
+                      </div>
+                    </button>
                     <button type="reset">Clear</button>
                 </div>
             </div> 
           </form>`);
     $("#form").submit(function (e) {
+      var btn = document.getElementById("btn");
+      var btnText = document.getElementById("btnText");
+      btnText.innerHTML = "Script ready";
+      btn.classList.add("active");
+      setTimeout(function(){
+      btn.classList.remove("active");
+      btnText.innerHTML = "Generate";  
+    }, (5*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
       const formProps = Object.fromEntries(formData);
@@ -268,12 +283,27 @@ $(document).ready(function () {
                 </div>
               </div>
         <div class="xsubmit">
-            <button type="submit" onclick="window.electronAPI.updateEvent('xref')">Generate</button>
+            <button type="submit" onclick="window.electronAPI.updateEvent('Xref')" id="btn">
+            <p id="btnText">Generate</p>
+            <div class="checked">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+              </svg>
+            </div>
+          </button>
             <button type="reset">Clear</button>
         </div>
       </div> 
           </form>`);
     $("#form").submit(function (e) {
+      var btn = document.getElementById("btn");
+      var btnText = document.getElementById("btnText");
+      btnText.innerHTML = "Script ready";
+      btn.classList.add("active");
+      setTimeout(function(){
+      btn.classList.remove("active");
+      btnText.innerHTML = "Generate";  
+    }, (5*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
       const formProps = Object.fromEntries(formData);
@@ -373,14 +403,29 @@ $(document).ready(function () {
           <input type="text" name="value6" placeholder="Enter value" style="width:442px;">
         </div>
       </div>
-  </div>
-  <div class="msubmit-da">
-    <button type="submit" onclick="window.electronAPI.updateEvent('Metric conversion')">Generate</button>
-    <button type="reset">Clear</button>
+      <div class="msubmit-da">
+            <button type="submit" onclick="window.electronAPI.updateEvent('Metric conversion')" id="btn">
+              <p id="btnText">Generate</p>
+              <div class="checked">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                  <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                </svg>
+              </div>
+          </button>
+          <button type="reset">Clear</button>
+    </div>
   </div>
   </form>`);
     $(".body").css("background-image", "none");
     $("#form").submit(function (e) {
+      var btn = document.getElementById("btn");
+      var btnText = document.getElementById("btnText");
+      btnText.innerHTML = "Script ready";
+      btn.classList.add("active");
+      setTimeout(function(){
+      btn.classList.remove("active");
+      btnText.innerHTML = "Generate";  
+    }, (5*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
       const formProps = Object.fromEntries(formData);
@@ -809,15 +854,30 @@ $(document).ready(function () {
   $(".spec-btns").click(function () {
     $(".body").html(`<form id="form">
             <div class="spec">
-                <div class=".textarea"><textarea placeholder="Paste PDF content here"></textarea></div>
-                <div class=".textarea"><textarea placeholder="Paste Excel content here"></textarea></div>
-            </div>
-            <div class="ssubmit">
-            <button class="bt1" type="submit" onclick="window.electronAPI.updateEvent('BookScan')">Generate</button>
-            <button class="bt1" type="reset">Clear</button>
+                <div class=".textarea"><textarea required placeholder="Paste PDF content here"></textarea></div>
+                <div class=".textarea"><textarea required placeholder="Paste Excel content here"></textarea></div>
+                <div class="ssubmit">
+                <button type="submit" onclick="window.electronAPI.updateEvent('BookScan')" id="btn">
+                <p id="btnText">Generate</p>
+                <div class="checked">
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                    <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                  </svg>
+                </div>
+              </button>            
+                <button class="bt1" type="reset">Clear</button>
+                </div>
             </div>
   </form>`);
     $("#form").submit(function (e) {
+      var btn = document.getElementById("btn");
+      var btnText = document.getElementById("btnText");
+      btnText.innerHTML = "Script ready";
+      btn.classList.add("active");
+      setTimeout(function(){
+      btn.classList.remove("active");
+      btnText.innerHTML = "Generate";  
+    }, (5*1000));
       e.preventDefault();
       const tx = document.getElementsByTagName("textarea");
       let inputs = [];
@@ -1157,12 +1217,27 @@ $(document).ready(function () {
       </div>
   </div>
   <div class="msubmit-da">
-    <button type="submit" onclick="window.electronAPI.updateEvent('Metric conversion-D&A')">Generate</button>
+      <button type="submit" onclick="window.electronAPI.updateEvent('Metric conversion-D&A')" id="btn">
+          <p id="btnText">Generate</p>
+          <div class="checked">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+              <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+            </svg>
+          </div>
+      </button>
     <button type="reset">Clear</button>
   </div>
   </form> `);
     $(".body").css("background-image", "none");
     $("#form").submit(function (e) {
+      var btn = document.getElementById("btn");
+      var btnText = document.getElementById("btnText");
+      btnText.innerHTML = "Script ready";
+      btn.classList.add("active");
+      setTimeout(function(){
+      btn.classList.remove("active");
+      btnText.innerHTML = "Generate";  
+    }, (5*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
       const formProps = Object.fromEntries(formData);

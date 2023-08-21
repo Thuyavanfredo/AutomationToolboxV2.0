@@ -6,14 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
-    <script src="script.js"></script>
-    <script src="test.js"></script>
+    <script src="./test.js"></script>
+    <script src="./control.js" defer type="module"s></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="test.css">
+    
 </head>
 <body>
-      hello world  
+    <div class="submit">
+        <button type="submit" onclick="window.electronAPI.updateEvent('graphic')" id="btn">
+          <p id="btnText">Generate</p>
+        <div class="checked">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+            <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+          </svg>
+        </div>
+    </button>
+    <button type="reset">Clear</button>
+  </div>
 </body>

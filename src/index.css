@@ -53,14 +53,14 @@ nav button{
   border-radius: 10px 10px 0px 0px;
   transition: scale 0.5s ease;
 }
-.submit button:hover, .xsubmit button:hover, .ssubmit button:hover, button:hover, .msubmit-da button:hover{
+.pdt-btns button:hover, .spec-btns button:hover, .da-btns button:hover{
   -webkit-app-region: no-drag;
   background: #fbba4c;
   border: 1px solid white;
   color: #e8ecea;
   scale: 1.07;
 }
-button:focus{
+.pdt-btns button:focus, .spec-btns button:focus, .da-btns button:focus,nav button:focus{
   -webkit-app-region: no-drag;
   background: #fbba4c;
   border: 1px solid white;
@@ -202,7 +202,7 @@ button:focus{
   transition: all 0.50s ease;
   animation: button-animate 0.50s linear;
 }
-button{
+.pdt-btns button, .spec-btns button, .da-btns button{
   -webkit-app-region: no-drag;
   padding: 0px 0px;
   font-family: 'manrope';
@@ -361,7 +361,10 @@ button{
   flex-direction: row;
   justify-content: space-evenly;
   position: relative;
-  top: 30px;
+  width: 614.67px;
+  top: 29px;
+  left: -5px;
+
 }
 .xsubmit{
   -webkit-app-region: no-drag;
@@ -369,36 +372,91 @@ button{
   flex-direction: row;
   justify-content: space-evenly;
   position: relative;
-  top: 19px;
+  width: 614.67px;
+  top: 18px;
+  left: -5px;
 }
 .ssubmit{
   -webkit-app-region: no-drag;
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
-  position: relative;
-  top: 5px;
+  position: absolute;
+  width: 614.67px;
+  top: 435px;
+  left: 0px;
 }
 .msubmit-da{
   -webkit-app-region: no-drag;
   display: flex;
+  width: 614.67px;
   flex-direction: row;
   justify-content: space-evenly;
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 435px;
 }
-.submit button, .xsubmit button, .ssubmit button, .msubmit-da button{
+.submit button,.xsubmit button, .ssubmit button, .msubmit-da button{
   -webkit-app-region: no-drag;
+  position: relative;
   width: 134px;
   height: 38px;
   padding: 0px 0px;
   font-family: 'Avenir';
-  font-size: 22px;
+  font-size: 20px;
   color: #615648;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
   border: none;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+  cursor: pointer;
+}
+.checked {
+  width: 38px;
+  height: 38px;
   border-radius: 40px;
-  transition: all 0.5s ease;
+  box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  top: 0px;
+  opacity: 0;
+  background: #fbba4c;
+}
+.checked svg {
+  width: 20px;
+}
+.checked path {
+  stroke-width: 3;
+  stroke: #fff;
+  stroke-dasharray: 34;
+  stroke-dashoffset: 34;
+  stroke-linecap: round;
+}
+.active button {
+  background: #fbba4c;
+  border: 1px solid white;
+  transition: 1s;
+}
+.active p {
+  transition: 1s;
+  font-size: 16px;
+  font-weight: bold;
+  margin-right: 35px;
+}
+.active .checked {
+  opacity: 1;
+  transition: 1s;
+  right: 0;
+}
+.active .checked path {
+  transition: 1s;
+  transition-delay: 1s;
+  stroke-dashoffset: 0;
 }
 .spec{
   width: 626px;
@@ -589,6 +647,7 @@ h1{
   .note h3{
     display: none;
   }
+  
    
 @keyframes button-animate{
   0%{
