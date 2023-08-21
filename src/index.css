@@ -54,11 +54,16 @@ nav button{
   transition: scale 0.5s ease;
 }
 .traffic-lights button{
+  -webkit-app-region: no-drag;
   opacity: 0.65;
   background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
   transition: scale 0.5s ease;
 }
-.pdt-btns button:hover, .spec-btns button:hover, .da-btns button:hover, .traffic-lights button:hover{
+.pdt-btns button:hover, 
+.spec-btns button:hover, 
+.da-btns button:hover, 
+.traffic-lights button:hover,
+nav button:hover{
   -webkit-app-region: no-drag;
   background: #fbba4c;
   border: 1px solid white;
@@ -71,6 +76,125 @@ nav button{
   border: 1px solid white;
   color: #e8ecea;
 }
+/* .wrapper{
+  -webkit-app-region: no-drag;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.wrapper .button{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button1{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button2{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover, 
+.wrapper .button1:hover,
+.wrapper .button2:hover
+{
+  width: 120px;
+}
+.wrapper .button .icon, 
+.wrapper .button1 .icon,
+.wrapper .button2 .icon{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon{
+  background: #4267B2;
+}
+.wrapper .button1:hover .icon{
+  background: #1DA1F2;
+}
+.wrapper .button2:hover .icon{
+  background: #E1306C;
+}
+.wrapper .button .icon i,
+.wrapper .button1 .icon i,
+.wrapper .button2 .icon i{
+  font-size: 25px;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i,
+.wrapper .button1:hover .icon i,
+.wrapper .button2:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 20px;
+  font-family: 'Avenir';
+  font-weight:500;
+  line-height: 40px;
+  margin-left: 8px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button1 span{
+  font-size: 20px;
+  align-content: center;
+  font-family: 'Avenir';
+  font-weight:500;
+  margin-left:25px;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button2 span{
+  font-size: 20px;
+  font-family: 'Avenir';
+  font-weight:500;
+  line-height: 40px;
+  margin-left: -2px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button span{
+  color: #4267B2;
+}
+.wrapper .button1 span{
+  color: #1DA1F2;
+}
+.wrapper .button2 span{
+  color: #E1306C;
+} */
 .icon-container {
   -webkit-app-region: no-drag;
   margin: 30px 0px 0px 200px;
@@ -359,6 +483,9 @@ nav button{
   font-size: 18px;
   font-weight: bold;
   font-family: 'Avenir';
+}
+input {
+  accent-color: #5b6876;
 }
 .submit{
   -webkit-app-region: no-drag;
