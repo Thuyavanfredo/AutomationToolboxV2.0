@@ -53,7 +53,12 @@ nav button{
   border-radius: 10px 10px 0px 0px;
   transition: scale 0.5s ease;
 }
-.pdt-btns button:hover, .spec-btns button:hover, .da-btns button:hover{
+.traffic-lights button{
+  opacity: 0.65;
+  background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
+  transition: scale 0.5s ease;
+}
+.pdt-btns button:hover, .spec-btns button:hover, .da-btns button:hover, .traffic-lights button:hover{
   -webkit-app-region: no-drag;
   background: #fbba4c;
   border: 1px solid white;
