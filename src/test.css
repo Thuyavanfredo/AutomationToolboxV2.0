@@ -1,61 +1,119 @@
-.submit button{
+.wrapper{
   -webkit-app-region: no-drag;
-  position: relative;
-  width: 134px;
-  height: 38px;
-  padding: 0px 0px;
-  font-family: 'Avenir';
-  font-size: 16px;
-  color: #615648;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
-  border: none;
-  border-radius: 20px;
-  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+}
+.wrapper .button{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  /* float: left; */
+  margin: 0 5px;
   overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
   cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
 }
-.checked {
-  width: 38px;
-  height: 38px;
-  border-radius: 40px;
-  box-shadow: 0 0 12px -2px rgba(0, 0, 0, 0.2);
-  position: absolute;
-  display: flex;
-  justify-content:center;
-  align-items:center;
-  top: 0px;
-  opacity: 0;
-  background: #fbba4c;
+.wrapper .button1{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  /* float: left; */
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
 }
-.checked svg {
-  width: 20px;
+.wrapper .button2{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  /* float: left; */
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
 }
-.checked path {
-  stroke-width: 3;
-  stroke: #fff;
-  stroke-dasharray: 34;
-  stroke-dashoffset: 34;
-  stroke-linecap: round;
+.wrapper .button:hover, 
+.wrapper .button1:hover,
+.wrapper .button2:hover
+{
+  width: 120px;
 }
-.active button {
-  background: #fbba4c;
-  border: 1px solid white;
-  transition: 1s;
+.wrapper .button .icon, 
+.wrapper .button1 .icon,
+.wrapper .button2 .icon{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
 }
-.active p {
-  transition: 1s;
-  margin-right: 50px;
+.wrapper .button:hover .icon{
+  background: #4267B2;
 }
-.active .checked {
-  opacity: 1;
-  transition: 1s;
-  right: 0;
+.wrapper .button1:hover .icon{
+  background: #1DA1F2;
 }
-.active .checked path {
-  transition: 1s;
-  transition-delay: 1s;
-  stroke-dashoffset: 0;
+.wrapper .button2:hover .icon{
+  background: #E1306C;
+}
+.wrapper .button .icon i,
+.wrapper .button1 .icon i,
+.wrapper .button2 .icon i{
+  font-size: 25px;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i,
+.wrapper .button1:hover .icon i,
+.wrapper .button2:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 20px;
+  font-family: 'Avenir';
+  font-weight:500;
+  line-height: 40px;
+  margin-left: 8px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button1 span{
+  font-size: 20px;
+  align-content: center;
+  font-family: 'Avenir';
+  font-weight:500;
+  margin-left:25px;
+  line-height: 40px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button2 span{
+  font-size: 20px;
+  font-family: 'Avenir';
+  font-weight:500;
+  line-height: 40px;
+  margin-left: -2px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button span{
+  color: #4267B2;
+}
+.wrapper .button1 span{
+  color: #1DA1F2;
+}
+.wrapper .button2 span{
+  color: #E1306C;
 }
