@@ -6,15 +6,15 @@ $(document).ready(function () {
       width: "814px",
       height: "452px",
       transform: "translateX(0px)",
-      transition: "all 0.5s linear",
+      transition: "all 0.4s ease",
     });
     $(".icon").css({
       transform: "translateX(0px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".icon1").css({
       transform: "translateX(0px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".body").html(`
       <video class="video" controls id="video" poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm"></video> 
@@ -40,15 +40,15 @@ $(document).ready(function () {
       width: "814px",
       height: "452px",
       transform: "translateX(0px)",
-      transition: "all 0.5s linear",
+      transition: "all 0.4s ease",
     });
     $(".icon").css({
       transform: "translateX(0px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".icon1").css({
       transform: "translateX(0px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".pdt-btns, .spec-btns").hide();
     $(".da-btns").hide();
@@ -119,15 +119,15 @@ $(document).ready(function () {
       width: "814px",
       height: "452px",
       transform: "translateX(0px)",
-      transition: "all 0.5s linear",
+      transition: "all 0.4s ease",
     });
     $(".icon").css({
       transform: "translateX(0px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".icon1").css({
       transform: "translateX(0px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".pdt-btns, .spec-btns").hide();
     $(".da-btns").hide();
@@ -1073,16 +1073,16 @@ $(document).ready(function () {
       "background-image": "none",
       width: "626px",
       height: "420px",
-      transition: "all 0.5s linear",
+      transition: "all 0.4s ease",
       transform: "translateX(180px)",
     });
     $(".icon").css({
       transform: "translateX(-280px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".icon1").css({
       transform: "translateX(320px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $("#text-title").delay(200).show();
     $("video").hide();
@@ -1096,16 +1096,16 @@ $(document).ready(function () {
       "background-image": "none",
       width: "626px",
       height: "420px",
-      transition: "all 0.5s linear",
+      transition: "all 0.4s ease",
       transform: "translateX(180px)",
     });
     $(".icon").css({
       transform: "translateX(-280px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.5s ease",
     });
     $(".icon1").css({
       transform: "translateX(320px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.5s ease",
     });
     $("#text-title").show();
     $("video").hide();
@@ -1119,16 +1119,16 @@ $(document).ready(function () {
       "background-image": "none",
       width: "626px",
       height: "420px",
-      transition: "all 0.5s linear",
+      transition: "all 0.4s ease",
       transform: "translateX(180px)",
     });
     $(".icon").css({
       transform: "translateX(-280px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $(".icon1").css({
       transform: "translateX(320px)",
-      transition: "transform 0.5s linear",
+      transition: "transform 0.4s ease",
     });
     $("#text-title").show();
     $("video").hide();

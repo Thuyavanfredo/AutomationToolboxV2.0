@@ -340,7 +340,7 @@ nav button:focus{
   width: fit-content;
   height: 420px;
   transition: all 0.50s ease;
-  animation: button-animate 0.50s linear;
+  animation: button-animate 0.5s ease;
 }
 .pdt-btns button, .spec-btns button, .da-btns button{
   -webkit-app-region: no-drag;
@@ -667,8 +667,8 @@ h1{
 .reveal{
   -webkit-app-region: no-drag;
   display: block;
-  /* animation: textreveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s; */
-  transition: all 3s ease-in-out;
+  animation: textreveal 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+  /* transition: all 3s ease-in-out; */
 }
 .metcontainer{
   display: flex;
@@ -821,10 +821,13 @@ h1{
    
 @keyframes button-animate{
   0%{
-    transform: translateX(-200px);
+    /* transform: translateY(-20px); */
+    opacity: 0;
   }
   100%{
-    transform: translateX(0px);
+    /* transform: translateY(0px); */
+    opacity: 1;
+
   }
 }
 @keyframes textreveal{
