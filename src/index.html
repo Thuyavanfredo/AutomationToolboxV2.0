@@ -13,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="index.css">
+    <title>Automation Toolbox v2.0</title>
 </head>
 <body>
     <div class="traffic-lights">
@@ -50,18 +51,18 @@
                 <button class="bt">Xref Insert</button>
                 <button class="bt" onclick="window.open('./steplist.html','_blank');">Steplist Creator</button>
                 <button class="bt"">Metric Conv.</button>
-                <button class="bt" onclick="window.electronAPI.setTitle('Prefix')">Prefix Update</button>
+                <button class="bt" onclick="window.electronAPI.setTitle('Prefix');window.electronAPI.updateEvent('Prefix Update')">Prefix Update</button>
             </div>
             <div class="spec-btns" style="display: none;">
                 <button class="bt">BookScan</button>
             </div>
             <div class="da-btns" style="display: none;">
-                <button id="weight" class="bt">Weight Calc.</button>
+                <button id="weight" class="bt" onclick="window.electronAPI.updateEvent('Weight Calculator');">Weight Calc.</button>
                 <button class="bt" onclick="window.open('./steplist.html','_blank')">Steplist Creator</button>
-                <button class="bt"">Metric Conv.</button>
+                <button class="bt" onclick="window.electronAPI.updateEvent('Metric Conversion');">Metric Conv.</button>
             </div>
             <div class="body" id="body">
-                <video class="video" controls poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm"></video>
+                <video class="video" controls poster="../img/sis2.0.png" src="../img/Introducing SIS 2.0.webmhd.webm" onclick="window.electronAPI.updateEvent('Tutorial');"></video>
             </div>     
         </div>
 </body>

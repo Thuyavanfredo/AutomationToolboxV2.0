@@ -188,7 +188,7 @@ $(document).ready(function () {
     $("#form").submit(function (e) {
       var btn = document.getElementById("btn");
       var btnText = document.getElementById("btnText");
-      btnText.innerHTML = "Script ready";
+      btnText.innerHTML = "Copied";
       btn.classList.add("active");
       setTimeout(function(){
       btn.classList.remove("active");
@@ -298,7 +298,7 @@ $(document).ready(function () {
     $("#form").submit(function (e) {
       var btn = document.getElementById("btn");
       var btnText = document.getElementById("btnText");
-      btnText.innerHTML = "Script ready";
+      btnText.innerHTML = "Copied";
       btn.classList.add("active");
       setTimeout(function(){
       btn.classList.remove("active");
@@ -358,7 +358,7 @@ $(document).ready(function () {
           </div> 
           <input type="text" placeholder="Enter tolerance value" name="tol">
           <div class="note">
-            <h3>Note: Mention <font color= yellow>ft/in</font> along with values (Eg: <font color= yellow>15ft/15in</font>)</h3>
+            <h3>Note: Mention <font color= #ebece3>ft/in</font> along with values (Eg: <font color= #ebece3>15ft/15in</font>)</h3>
           </div>
         </div>
         <div class="metric-items">
@@ -420,7 +420,7 @@ $(document).ready(function () {
     $("#form").submit(function (e) {
       var btn = document.getElementById("btn");
       var btnText = document.getElementById("btnText");
-      btnText.innerHTML = "Script ready";
+      btnText.innerHTML = "Copied";
       btn.classList.add("active");
       setTimeout(function(){
       btn.classList.remove("active");
@@ -872,7 +872,7 @@ $(document).ready(function () {
     $("#form").submit(function (e) {
       var btn = document.getElementById("btn");
       var btnText = document.getElementById("btnText");
-      btnText.innerHTML = "Script ready";
+      btnText.innerHTML = "Copied";
       btn.classList.add("active");
       setTimeout(function(){
       btn.classList.remove("active");
@@ -1072,7 +1072,7 @@ $(document).ready(function () {
     $(".body").css({
       "background-image": "none",
       width: "626px",
-      height: "426px",
+      height: "420px",
       transition: "all 0.5s linear",
       transform: "translateX(180px)",
     });
@@ -1095,7 +1095,7 @@ $(document).ready(function () {
     $(".body").css({
       "background-image": "none",
       width: "626px",
-      height: "426px",
+      height: "420px",
       transition: "all 0.5s linear",
       transform: "translateX(180px)",
     });
@@ -1118,7 +1118,7 @@ $(document).ready(function () {
     $(".body").css({
       "background-image": "none",
       width: "626px",
-      height: "426px",
+      height: "420px",
       transition: "all 0.5s linear",
       transform: "translateX(180px)",
     });
@@ -1170,7 +1170,7 @@ $(document).ready(function () {
           </div> 
           <input type="text" placeholder="Enter tolerance value" name="tol">
           <div class="note">
-            <h3>Note: Mention <font color= yellow>ft/in</font> along with values (Eg: <font color= yellow>15ft/15in</font>)</h3>
+            <h3>Note: Mention <font color= #ebece3>ft/in</font> along with values (Eg: <font color= #ebece3>15ft/15in</font>)</h3>
           </div>
         </div>
         <div class="metric-items">
@@ -1232,7 +1232,7 @@ $(document).ready(function () {
     $("#form").submit(function (e) {
       var btn = document.getElementById("btn");
       var btnText = document.getElementById("btnText");
-      btnText.innerHTML = "Script ready";
+      btnText.innerHTML = "Copied";
       btn.classList.add("active");
       setTimeout(function(){
       btn.classList.remove("active");

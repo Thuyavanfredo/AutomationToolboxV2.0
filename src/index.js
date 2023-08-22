@@ -43,7 +43,7 @@ const createWindow = () => {
     mainWindow = new BrowserWindow({
     width: 887,
     height: 568,
-    icon: path.join(__dirname, 'img/android-chrome-512x512.png'),
+    icon: path.join(__dirname, '../img/android-chrome-512x512.png'),
     // titleBarStyle: 'hidden',
     // titleBarOverlay: true,
     frame: false,

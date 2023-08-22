@@ -62,19 +62,30 @@ nav button{
 .pdt-btns button:hover, 
 .spec-btns button:hover, 
 .da-btns button:hover, 
-.traffic-lights button:hover,
-nav button:hover{
+.traffic-lights button:hover{
   -webkit-app-region: no-drag;
-  background: #fbba4c;
-  border: 1px solid white;
-  color: #e8ecea;
+  /* background: linear-gradient(90deg, rgba(237, 241, 245, 1), rgba(174, 194, 177, 0.42)); */
+  background: linear-gradient(255deg, #dadada, #e5e5e5, #f0f0f0);
+  color: #9d835a;
+  opacity: 0.80;
   scale: 1.07;
 }
-.pdt-btns button:focus, .spec-btns button:focus, .da-btns button:focus,nav button:focus{
+nav button:hover{
+  background: #fbba4c;
+  color: #9d835a;
+  border: 1px solid white;
+  scale: 1.07;
+}
+.pdt-btns button:focus, .spec-btns button:focus, .da-btns button:focus{
   -webkit-app-region: no-drag;
+  opacity: 1;
+  /* background: linear-gradient(90deg, rgba(237, 241, 245, 1), rgba(174, 194, 177, 0.42)); */
+  background: linear-gradient(255deg, #dadada, #e5e5e5, #f0f0f0);
+  color: #9d835a;
+}
+nav button:focus{
   background: #fbba4c;
   border: 1px solid white;
-  color: #e8ecea;
 }
 /* .wrapper{
   -webkit-app-region: no-drag;
@@ -327,7 +338,7 @@ nav button:hover{
   flex-wrap: wrap;
   justify-content:space-around;
   width: fit-content;
-  height: 452px;
+  height: 420px;
   transition: all 0.50s ease;
   animation: button-animate 0.50s linear;
 }
@@ -337,9 +348,9 @@ nav button:hover{
   font-family: 'manrope';
   font-size: 22px;
   color: #9d835a;
-  background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
-  border: none;
-  opacity: 0.59;
+  background: #fbba4c;
+  border: 1px solid white;
+  opacity: 0.75;
   width: 174px;
   height: 49px;
   border-radius: 40px;
@@ -412,23 +423,32 @@ nav button:hover{
 .graphic-container ul, .xref-container ul{
   list-style: none;
   display: grid;
-  width: 550px;
+  width: 555px;
   height: 191px;
   background: #e1e2e2;
   grid-template-columns: 200px 200px;
-  row-gap: 10px;
+  row-gap: 0px;
   column-gap: 80px;
   justify-content: left;
   align-content: space-around;
   color: #565946;
   font-family: 'Avenir';
-  font-size: large;
+  font-size: 20px;
   font-weight: bold;
   border-radius: 10px;
 }
+.graphic-container li{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.graphic-container label{
+margin-left: 10px;
+}
 .gno input{
   -webkit-app-region: no-drag;
-  width: 428px;
+  width: 377px;
   height: 26px;
   border: none;
   border-radius: 15px;
@@ -436,15 +456,17 @@ nav button:hover{
 }
 .xno input{
   -webkit-app-region: no-drag;
-  width: 410px;
+  width: 350px;
   height: 26px;
   border: none;
   border-radius: 15px;
   background: #e1e2e2;
 }
+.x-ref1 input{
+  margin-left:-3px; 
+}
 .gno{
-  display: flex;
-  flex-direction: row;
+  margin-top: 2px;
 }
 .xno{
   display: flex;
@@ -453,39 +475,49 @@ nav button:hover{
   height: 120px;
 }
 .x-ref{
-  margin: 50px 0px 0px 0px;
+  margin: 36px 0px 0px 0px;
 }
 .x-ref1{
-  margin: 50px 0px 0px 0px;
+  margin: 33px 0px 0px 0px;
 }
 .gno input,.xno input,.metric-items input::placeholder {
   padding-left: 10px;
 }
 .gtype{
   -webkit-app-region: no-drag;
-  margin: 80px 0px 0px 0px;
+  margin: 55px 0px 0px 0px;
 }
 .xtype{
   -webkit-app-region: no-drag;
-  margin: 48px 0px 0px 0px;
+  margin: 36px 0px 0px 0px;
 }
 .gtype1,.xtype1{
   -webkit-app-region: no-drag;
-  margin: 0px 0px 0px 20px;
+  margin: 0px 0px 0px 9px;
 }
 .gtype1 input{
   margin: 0px 0px 0px -20px;
 }
 .gtitle, .xtitle{
-  margin: 0px 40px 10px 0px;
+  margin: 0px 35px 10px 12px;
   width: fit-content;
   color: #565946;
-  font-size: 18px;
+  font-size: 22px;
+  font-weight: bold;
+  font-family: 'Avenir';
+}
+.xtitle{
+  margin: 0px 35px 10px 12px;
+  width: fit-content;
+  color: #565946;
+  font-size: 22px;
   font-weight: bold;
   font-family: 'Avenir';
 }
 input {
-  accent-color: #5b6876;
+  accent-color: #75672a;
+  width: 20px;
+  height: 20px;
 }
 .submit{
   -webkit-app-region: no-drag;
@@ -494,7 +526,7 @@ input {
   justify-content: space-evenly;
   position: relative;
   width: 614.67px;
-  top: 29px;
+  top: 42px;
   left: -5px;
 
 }
@@ -525,7 +557,7 @@ input {
   flex-direction: row;
   justify-content: space-evenly;
   position: absolute;
-  top: 435px;
+  top: 431px;
 }
 .submit button,.xsubmit button, .ssubmit button, .msubmit-da button{
   -webkit-app-region: no-drag;
@@ -539,12 +571,16 @@ input {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(120deg, #eef2f6, #aec1b1 90%);
+  /* background: linear-gradient(120deg, #eef2f6, #aec1b1 90%); */
+  background: linear-gradient(255deg, #dadada, #e5e5e5, #f0f0f0);
   border: none;
   border-radius: 20px;
-  box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4);
+  /* box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4); */
   overflow: hidden;
   cursor: pointer;
+}
+.submit button :hover,.xsubmit button :hover, .ssubmit button :hover, .msubmit-da button :hover{
+  scale: 1.2;
 }
 .checked {
   width: 38px;
@@ -560,7 +596,7 @@ input {
   background: #fbba4c;
 }
 .checked svg {
-  width: 20px;
+  width: 35px;
 }
 .checked path {
   stroke-width: 3;
@@ -661,7 +697,7 @@ h1{
     margin-top: 3PX;
     font-size: 12px;
     font-family: manrope;
-    color: #999999;
+    color: #181616;
     top: 0px;
     left: 0px;
   }
@@ -681,7 +717,7 @@ h1{
     width: 30px;
     height: 15px;
     -webkit-appearance: none;
-    background: #1cd292;
+    background: #beb8ad;
     outline: none;
     border-radius: 8px;
     border: none;
@@ -713,14 +749,14 @@ h1{
     justify-content: space-evenly;
     width: 126px;
     height: 376px;
-    margin: 50px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
     align-items: left;
   }
   .metric-container{
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    margin: 50px 0px 0px 0px;
+    margin: 40px 0px 0px 0px;
     width: 500px;
     height: 376px;
   }
@@ -778,6 +814,8 @@ h1{
   }
   .note h3{
     display: none;
+    font-family: 'Avenir';
+    color: #565946;
   }
   
    
