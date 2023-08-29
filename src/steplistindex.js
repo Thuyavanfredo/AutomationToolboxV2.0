@@ -1,4 +1,4 @@
-const { app, BrowserWindow, ipcMain, shell } = require('electron');
+const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
 const { autoUpdater } = require("electron-updater")
 const log = require('electron-log');
@@ -7,35 +7,12 @@ const fs = require("fs")
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
-fs.mkdir("C:/Automation Toolboxv3.0", function(err) {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log("New directory successfully created.")
-  }
-})
-log.transports.file.resolvePath = () => path.join("C:/Automation Toolboxv3.0", '/logs/main.log');
-log.log("Application version"+ app.getVersion())
-log.info('Hello, log');
-
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 // eslint-disable-next-line global-require
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
-function handleSetTitle (event, title) {
-  var child = require('child_process').execFile;
-  var executablePath = "./img/Effectivity Macro 2.07.exe";
-  
-  child(executablePath, function(err, data) {
-      if(err){
-         console.error(err);
-         return;
-      }
-   
-      console.log(data.toString());
-  });
-}
+
 let mainWindow;
 const createWindow = () => {
   // Create the browser window.
@@ -59,12 +36,14 @@ const createWindow = () => {
       nodeIntegration: true,
       contextIsolation: true,
       // enableRemoteModule: true,
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname, 'steppreload.js'),
     },
   });
+
   // and load the index.html of the app.
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+  mainWindow.loadFile(path.join(__dirname, 'steplistindex.html'));
   mainWindow.setMenuBarVisibility(false)
+
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
@@ -76,11 +55,6 @@ const createWindow = () => {
 app.whenReady().then(() => {
   ipcMain.on('set-title', handleSetTitle)
   createWindow()
-  app.on("activate", () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-      createWindow();
-    }
-  });
   autoUpdater.checkForUpdatesAndNotify()
 })
 
@@ -129,9 +103,6 @@ ipcMain.on("app/close", () => {
 ipcMain.on("app/minimize", () => {
   mainWindow.minimize();
 });
-
-
- 
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.

@@ -2,7 +2,7 @@ $(document).ready(function () {
   $(".icon-expand:nth-child(1)").click(function () {
     $(".body").html("");
     $(".body").css({
-      "background-image": "url(../img/main_page_low.png)",
+      "background-image": "url(../img/homenew.png)",
       width: "814px",
       height: "452px",
       transform: "translateX(0px)",
@@ -173,7 +173,7 @@ $(document).ready(function () {
                     </div>
                 </div>
                 <div class="submit">
-                    <button type="submit" onclick="window.electronAPI.updateEvent('graphic')" id="btn">
+                    <button type="submit" onclick="window.electronAPI.updateEvent('Graphic Insert')" id="btn">
                       <p id="btnText">Generate</p>
                       <div class="checked">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -193,7 +193,7 @@ $(document).ready(function () {
       setTimeout(function(){
       btn.classList.remove("active");
       btnText.innerHTML = "Generate";  
-    }, (5*1000));
+    }, (3*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
       const formProps = Object.fromEntries(formData);
@@ -235,7 +235,7 @@ $(document).ready(function () {
           '.cvx"/></figure>',
         ],
       ];
-      const x = templates[formProps.Graphic].join(formProps.graphics);
+      const x = templates[formProps.Graphic].join((formProps.graphics.toLowerCase().replace(/\s/g, "")));
       navigator.clipboard.writeText(x);
     });
     $(".submit button:nth-child(2)").click(function (e) {
@@ -283,7 +283,7 @@ $(document).ready(function () {
                 </div>
               </div>
         <div class="xsubmit">
-            <button type="submit" onclick="window.electronAPI.updateEvent('Xref')" id="btn">
+            <button type="submit" onclick="window.electronAPI.updateEvent('Xref Insert')" id="btn">
             <p id="btnText">Generate</p>
             <div class="checked">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -303,7 +303,7 @@ $(document).ready(function () {
       setTimeout(function(){
       btn.classList.remove("active");
       btnText.innerHTML = "Generate";  
-    }, (5*1000));
+    }, (3*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
       const formProps = Object.fromEntries(formData);
@@ -319,9 +319,9 @@ $(document).ready(function () {
         return;
       }
       const w = templates[formProps.XREF].split("IE");
-      const x = w.join(formProps.IE);
+      const x = w.join(formProps.IE.toLowerCase().replace(/\s/g, ""));
       const y = x.split("ID");
-      const z = y.join(formProps.ID);
+      const z = y.join((formProps.ID.toLowerCase().replace(/\s/g, "")));
       navigator.clipboard.writeText(z);
       console.log(z);
     });
@@ -404,7 +404,7 @@ $(document).ready(function () {
         </div>
       </div>
       <div class="msubmit-da">
-            <button type="submit" onclick="window.electronAPI.updateEvent('Metric conversion')" id="btn">
+            <button type="submit" onclick="window.electronAPI.updateEvent('Metric conversion-PDT')" id="btn">
               <p id="btnText">Generate</p>
               <div class="checked">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
@@ -425,10 +425,10 @@ $(document).ready(function () {
       setTimeout(function(){
       btn.classList.remove("active");
       btnText.innerHTML = "Generate";  
-    }, (5*1000));
+    }, (3*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
-      const formProps = Object.fromEntries(formData);
+      const formProps = Object.fromEntries(formData.toLowerCase().replace(/\s/g, ""));
       console.log(formProps);
       let texttocopy;
       let unit_torque;
@@ -848,10 +848,6 @@ $(document).ready(function () {
     $(".body").css("background-image", "url(../img/main_page_low.png)");
   });
   $(".bt:eq(5)").click(function () {
-    $(".home").html("");
-    $(".home").css("background-image", "url(img/main.jpg)");
-  });
-  $(".spec-btns").click(function () {
     $(".body").html(`<form id="form">
             <div class="spec">
                 <div class=".textarea"><textarea required placeholder="Paste PDF content here"></textarea></div>
@@ -877,7 +873,7 @@ $(document).ready(function () {
       setTimeout(function(){
       btn.classList.remove("active");
       btnText.innerHTML = "Generate";  
-    }, (5*1000));
+    }, (3*1000));
       e.preventDefault();
       const tx = document.getElementsByTagName("textarea");
       let inputs = [];
@@ -1067,6 +1063,69 @@ $(document).ready(function () {
       $("#form").trigger("reset");
     });
   });
+  $(".bt:eq(6)").click(function () {
+    $(".body").html(`<form id="form">
+    <div class="sno">
+      <label class="spectitle">Number of Rows</label>
+      <input type="number" required placeholder="Enter number of rows" name="rows">
+    </div>
+    <div class="spsubmit">
+        <button type="submit" onclick="window.electronAPI.updateEvent('Spec Table')" id="btn">
+            <p id="btnText">Generate</p>
+            <div class="checked">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                    <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                </svg>
+            </div>
+        </button>
+        <button type="reset">Clear</button>
+    </div>
+</form>`);
+    $("#form").submit(function (e) {
+      var btn = document.getElementById("btn");
+      var btnText = document.getElementById("btnText");
+      btnText.innerHTML = "Copied";
+      btn.classList.add("active");
+      setTimeout(function(){
+      btn.classList.remove("active");
+      btnText.innerHTML = "Generate";  
+    }, (3*1000));
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const formProps = Object.fromEntries(formData);
+    var no = formProps.rows;
+    const R = `<table frame="all" id="i09608397.1" pgwide="1">
+    <tgroup align="center" cols="4">
+    <colspec colname="col1" colwidth="0.24*"/>
+    <colspec colname="col2" colwidth="0.24*"/>
+    <colspec colname="col3" colwidth="0.77*"/>
+    <colspec colname="col4" colwidth="2.74*"/>
+    <thead>
+    <row>
+    <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Item</para></entry>
+    <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Qty</para></entry>
+    <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Part</para></entry>
+    <entry valign="middle"><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Specification Description</para></entry>
+    </row>
+    </thead>
+    <tbody>`;
+    const W = `</tbody>
+    </tgroup>
+    </table>`;
+    let O = "";
+        for( let i = 0; i < no; i++){
+            O += "\n"+`<row valign="middle">
+            <entry colname="col1"><para>` + (i+1) + `</para></entry>
+            <entry colname="col2"><para></para></entry>
+            <entry colname="col3"><para><cpn-id><partno></partno><cpn></cpn></cpn-id></para></entry>
+            <entry colname="col4"><para></para></entry>
+            </row>`+ "\n"; 
+        }
+      row = R+O+W;
+      console.log(row);
+      navigator.clipboard.writeText(row); 
+    })
+  });
   $("#pdt").click(function () {
     $(".body").html("");
     $(".body").css({
@@ -1141,7 +1200,7 @@ $(document).ready(function () {
                 height: 100%;">`);
     });
   });
-  $(".bt:eq(8)").click(function () {
+  $(".bt:eq(9)").click(function () {
     $(".body").html(`<form class="metric" id="form">
     <div class="metcontainer">
     <div class="toggle-container">
@@ -1193,8 +1252,7 @@ $(document).ready(function () {
         <div class="metric-items">
           <input type="text" placeholder="Enter value" name="value3">
           <div class="plus">
-            <span>&plusmn</span>
-          </div> 
+            <span>&plusmn</span>          </div> 
           <input type="text" placeholder="Enter tolerance value" name="tol1b">
         </div>
         <div class="metric-items">
@@ -1237,7 +1295,7 @@ $(document).ready(function () {
       setTimeout(function(){
       btn.classList.remove("active");
       btnText.innerHTML = "Generate";  
-    }, (5*1000));
+    }, (3*1000));
       e.preventDefault();
       const formData = new FormData(e.target);
       const formProps = Object.fromEntries(formData);
@@ -1294,27 +1352,15 @@ $(document).ready(function () {
           }lb ${unit_torque}</english></unitsgrp>`;
         } else {
           if (formProps.value <= 34) {
-            formProps.cvalue = (formProps.value * 8.85074576738).toFixed(
-              String(formProps.value).split(".")[1] &&
-                String(formProps.value).split(".")[1].length
-            );
+            formProps.cvalue = (formProps.value * 8.85074576738).toFixed(0);
             if (formProps.tol) {
-              formProps.ctolvalue = (formProps.tol * 8.85074576738).toFixed(
-                String(formProps.tol).split(".")[1] &&
-                  String(formProps.tol).split(".")[1].length
-              );
+              formProps.ctolvalue = (formProps.tol * 8.85074576738).toFixed(0);
             }
             unit_torque = "in";
           } else {
-            formProps.cvalue = (formProps.value * 0.737562149277).toFixed(
-              String(formProps.value).split(".")[1] &&
-                String(formProps.value).split(".")[1].length
-            );
+            formProps.cvalue = (formProps.value * 0.737562149277).toFixed(0);
             if (formProps.tol) {
-              formProps.ctolvalue = (formProps.tol * 0.737562149277).toFixed(
-                String(formProps.tol).split(".")[1] &&
-                  String(formProps.tol).split(".")[1].length
-              );
+              formProps.ctolvalue = (formProps.tol * 0.737562149277).toFixed();
             }
             unit_torque = "ft";
           }
@@ -1654,5 +1700,6 @@ $(document).ready(function () {
         $(".toggle input").attr("checked", false);
       }
     });
-  });
+  }); 
 });
+

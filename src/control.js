@@ -1,3 +1,4 @@
+const { contextBridge, ipcRenderer, shell } = 'electron';
 const MINUS = document.getElementById("minimize");
 const CLOSE_APP = document.getElementById("close-app");
 

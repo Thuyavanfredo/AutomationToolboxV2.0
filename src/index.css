@@ -286,8 +286,8 @@ nav button:focus{
 .body{
   -webkit-app-region: no-drag;
   display: flex;
-  border: 1px solid #eae3cb;
-  background: url("../img/main_page_low.gif");
+  border: 0.5px solid #eae3cb;
+  background: url("../img/homenew.png");
   background-size:cover;
   border-radius: 10px;
   width: 814px;
@@ -462,6 +462,14 @@ margin-left: 10px;
   border-radius: 15px;
   background: #e1e2e2;
 }
+.sno input{
+  -webkit-app-region: no-drag;
+  width: 150px;
+  height: 26px;
+  border: none;
+  border-radius: 15px;
+  background: #e1e2e2;
+}
 .x-ref1 input{
   margin-left:-3px; 
 }
@@ -474,13 +482,21 @@ margin-left: 10px;
   justify-content: space-evenly;
   height: 120px;
 }
+.sno{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  left: 18%;
+}
 .x-ref{
   margin: 36px 0px 0px 0px;
 }
 .x-ref1{
   margin: 33px 0px 0px 0px;
 }
-.gno input,.xno input,.metric-items input::placeholder {
+.gno input,.xno input,.sno input,.metric-items input::placeholder {
   padding-left: 10px;
 }
 .gtype{
@@ -498,7 +514,7 @@ margin-left: 10px;
 .gtype1 input{
   margin: 0px 0px 0px -20px;
 }
-.gtitle, .xtitle{
+.gtitle, .xtitle, .spectitle{
   margin: 0px 35px 10px 12px;
   width: fit-content;
   color: #565946;
@@ -559,7 +575,16 @@ input {
   position: absolute;
   top: 431px;
 }
-.submit button,.xsubmit button, .ssubmit button, .msubmit-da button{
+.spsubmit{
+  -webkit-app-region: no-drag;
+  display: flex;
+  width: 614.67px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 435px;
+}
+.submit button,.xsubmit button,.ssubmit button, .msubmit-da button{
   -webkit-app-region: no-drag;
   position: relative;
   width: 134px;
@@ -579,7 +604,27 @@ input {
   overflow: hidden;
   cursor: pointer;
 }
-.submit button :hover,.xsubmit button :hover, .ssubmit button :hover, .msubmit-da button :hover{
+.spsubmit button{
+  -webkit-app-region: no-drag;
+  position: relative;
+  width: 134px;
+  height: 38px;
+  padding: 0px 0px;
+  font-family: 'Avenir';
+  font-size: 20px;
+  color: #615648;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: linear-gradient(120deg, #eef2f6, #aec1b1 90%); */
+  background: linear-gradient(255deg, #dadada, #e5e5e5, #f0f0f0);
+  border: none;
+  border-radius: 20px;
+  /* box-shadow: 0 6px 20px -5px rgba(0, 0, 0, 0.4); */
+  overflow: hidden;
+  cursor: pointer;
+}
+.submit button :hover,.xsubmit button :hover, .ssubmit button :hover,.spsubmit button :hover, .msubmit-da button :hover{
   scale: 1.2;
 }
 .checked {
@@ -618,12 +663,12 @@ input {
 }
 .active .checked {
   opacity: 1;
-  transition: 1s;
+  transition: 0.5s;
   right: 0;
 }
 .active .checked path {
-  transition: 1s;
-  transition-delay: 1s;
+  transition: 0.5s;
+  transition-delay: 0.3s;
   stroke-dashoffset: 0;
 }
 .spec{
