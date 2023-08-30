@@ -847,7 +847,7 @@ $(document).ready(function () {
     $(".body").html("");
     $(".body").css("background-image", "url(../img/main_page_low.png)");
   });
-  $(".bt:eq(5)").click(function () {
+  $(".bt:eq(6)").click(function () {
     $(".body").html(`<form id="form">
             <div class="spec">
                 <div class=".textarea"><textarea required placeholder="Paste PDF content here"></textarea></div>
@@ -1063,7 +1063,7 @@ $(document).ready(function () {
       $("#form").trigger("reset");
     });
   });
-  $(".bt:eq(6)").click(function () {
+  $(".bt:eq(7)").click(function () {
     $(".body").html(`<form id="form">
     <div class="sno">
       <label class="spectitle">Number of Rows</label>
@@ -1118,7 +1118,7 @@ $(document).ready(function () {
             <entry colname="col1"><para>` + (i+1) + `</para></entry>
             <entry colname="col2"><para></para></entry>
             <entry colname="col3"><para><cpn-id><partno></partno><cpn></cpn></cpn-id></para></entry>
-            <entry colname="col4"><para></para></entry>
+            <entry align="left" colname="col4"><para></para></entry>
             </row>`+ "\n"; 
         }
       row = R+O+W;
@@ -1127,7 +1127,7 @@ $(document).ready(function () {
     })
   });
   $("#pdt").click(function () {
-    $(".body").html("");
+    $(".body").html(`<div class="periodicals"><p>Periodicals</p></div>`);
     $(".body").css({
       "background-image": "none",
       width: "626px",
@@ -1150,7 +1150,7 @@ $(document).ready(function () {
     $(".da-btns").hide();
   });
   $("#spec").click(function () {
-    $(".body").html("");
+    $(".body").html(`<div class="periodicals1"><p>Specifications</p></div>`);
     $(".body").css({
       "background-image": "none",
       width: "626px",
@@ -1173,7 +1173,7 @@ $(document).ready(function () {
     $(".da-btns").hide();
   });
   $("#da").click(function () {
-    $(".body").html("");
+    $(".body").html(`<div class="periodicals2"><p>D & A</p></div>`);
     $(".body").css({
       "background-image": "none",
       width: "626px",
@@ -1200,7 +1200,7 @@ $(document).ready(function () {
                 height: 100%;">`);
     });
   });
-  $(".bt:eq(9)").click(function () {
+  $(".bt:eq(10)").click(function () {
     $(".body").html(`<form class="metric" id="form">
     <div class="metcontainer">
     <div class="toggle-container">
@@ -1701,5 +1701,8 @@ $(document).ready(function () {
       }
     });
   }); 
+  $("#bug").click(function (e) {
+    alert("Send email to Thuyavan(tamilarasan_thuyavan@cat.com)");
+  });
 });
 

@@ -1,9 +1,9 @@
-const { app, BrowserWindow, ipcMain, shell } = require('electron');
+const { app, BrowserWindow, ipcMain} = require('electron');
 const path = require('path');
 const { autoUpdater } = require("electron-updater")
 const log = require('electron-log');
-const fs = require("fs")
-
+const fs = require("fs");
+const { shell } = require('electron');
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
@@ -23,7 +23,7 @@ log.info('Hello, log');
 if (require('electron-squirrel-startup')) {
   app.quit();
 }
-function handleSetTitle (event, title) {
+function handleSetTitle (event, prefix) {
   var child = require('child_process').execFile;
   var executablePath = "./img/Effectivity Macro 2.07.exe";
   
@@ -129,9 +129,20 @@ ipcMain.on("app/close", () => {
 ipcMain.on("app/minimize", () => {
   mainWindow.minimize();
 });
+ipcMain.on("app/link", () => {
+  // Replace 'https://www.example.com' with the link you want to open
+  const EA = 'https://engineeringautomation.ecorp.cat.com/eatcui/PNWC/';
+  shell.openExternal(EA);
+});
+// ipcMain.on("app/mail", () => {
+//   // Replace 'https://www.example.com' with the link you want to open
+//   const recipientEmail = 'thuyavanoo7@gmail.com';
+//   const subject = encodeURIComponent('test');
+//   const body = encodeURIComponent('hello');
 
-
- 
+//   const mailtoUrl = `mailto:${recipientEmail}?subject=${subject}&body=${body}`;
+//   shell.openExternal(mailtoUrl);
+// });
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and import them here.

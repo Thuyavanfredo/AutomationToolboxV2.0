@@ -2,6 +2,7 @@
 // https://www.electronjs.org/docs/latest/tutorial/process-model#preload-scripts
 const { contextBridge, ipcRenderer, shell } = require("electron");
 const { writeFile, readFile } = require("fs");
+const { title } = require("process");
 contextBridge.exposeInMainWorld('electronAPI', {
     setTitle: (title) => ipcRenderer.send('set-title', title),
     updateEvent:(buttonType)=>{
@@ -62,6 +63,8 @@ const API = {
     mainWindow: {
         close: () => ipcRenderer.send("app/close"),
         minimize: () => ipcRenderer.send("app/minimize"),
+        link: () => ipcRenderer.send("app/link"),
+        mail: () => ipcRenderer.send("app/mail")
     },
 }
 
