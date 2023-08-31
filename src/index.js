@@ -25,7 +25,7 @@ if (require('electron-squirrel-startup')) {
 }
 function handleSetTitle (event, prefix) {
   var child = require('child_process').execFile;
-  var executablePath = "./img/Effectivity Macro 2.07.exe";
+  var executablePath = "./.exe/Effectivity Macro 2.07.exe";
   
   child(executablePath, function(err, data) {
       if(err){
@@ -65,7 +65,6 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
   mainWindow.setMenuBarVisibility(false)
-
   // Open the DevTools.
   // mainWindow.webContents.openDevTools();
 }
@@ -130,9 +129,33 @@ ipcMain.on("app/minimize", () => {
   mainWindow.minimize();
 });
 ipcMain.on("app/link", () => {
-  // Replace 'https://www.example.com' with the link you want to open
   const EA = 'https://engineeringautomation.ecorp.cat.com/eatcui/PNWC/';
   shell.openExternal(EA);
+});
+ipcMain.on("app/child", () => {
+  let childWindow;
+  childWindow = new BrowserWindow ({
+    icon: path.join(__dirname, '../img/android-chrome-512x512.png'),
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: true,
+      // enableRemoteModule: true,
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
+  childWindow.loadFile(path.join(__dirname,'steplist.html'));
+  childWindow.setMenuBarVisibility(false);
+});
+ipcMain.on("app/jt", () => {
+    var child = require('child_process').execFile;
+    var executablePath = "./.exe/JTPrep_Release_Jan2023/JTPrep.exe";
+    
+    child(executablePath, function(err, data) {
+        if(err){
+           console.error(err);
+           return;
+        }
+})
 });
 // ipcMain.on("app/mail", () => {
 //   // Replace 'https://www.example.com' with the link you want to open

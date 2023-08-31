@@ -8,10 +8,49 @@ html,body {
   overflow: hidden;
   top: 0px;
   left: 0px;
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
 }
 @font-face {
   font-family: "Avenir";
   src: url(../fonts/AvenirLTStd-Book.otf);
+}
+.bug{
+  width: 120px;
+  height: 30px;
+  position: absolute;
+  left: 828px;
+  top: 20px;
+}
+.bug img{
+ position: absolute;
+ z-index: 2;
+ width: 30px;
+ height: 30px;
+ -webkit-app-region: no-drag;
+}
+.logo img{
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  left: 20%;
+  top: 10%;
+}
+#bug:hover:after{
+  content: '';
+  font-family: 'Avenir';
+  font-weight: bold;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 120px;
+  height: 30px;
+  margin-left: 5px;
+  -webkit-app-region: no-drag;
 }
 .periodicals{
   display: flex;
@@ -908,6 +947,16 @@ h1{
   }
 }
 @keyframes textreveal{
+  0%{
+      transform: translate(-300px,0);
+      opacity: 0;
+  }
+  100%{
+      transform: translate(0,0);
+      opacity: 1;
+  }
+}
+@keyframes bug{
   0%{
       transform: translate(-300px,0);
       opacity: 0;

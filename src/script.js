@@ -21,6 +21,7 @@ $(document).ready(function () {
       `);
     $(".pdt-btns").hide();
     $(".spec-btns").hide();
+    $(".bug").show();
     $(".da-btns").hide();
     $("#text-title").hide();
   });
@@ -53,6 +54,7 @@ $(document).ready(function () {
     $(".pdt-btns, .spec-btns").hide();
     $(".da-btns").hide();
     $("#text-title").hide();
+    $(".bug").show();
     $(".video").hide();
   });
   $(".icon-expand:nth-child(3)").click(function () {
@@ -132,6 +134,7 @@ $(document).ready(function () {
     $(".pdt-btns, .spec-btns").hide();
     $(".da-btns").hide();
     $("#text-title").hide();
+    $(".bug").show();
     $(".video").hide();
   });
   $(".bt:eq(0)").click(function () {
@@ -1146,6 +1149,7 @@ $(document).ready(function () {
     $("#text-title").delay(200).show();
     $("video").hide();
     $(".pdt-btns").show();
+    $(".bug").hide();
     $(".spec-btns").hide();
     $(".da-btns").hide();
   });
@@ -1168,6 +1172,7 @@ $(document).ready(function () {
     });
     $("#text-title").show();
     $("video").hide();
+    $(".bug").hide();
     $(".pdt-btns").hide();
     $(".spec-btns").show();
     $(".da-btns").hide();
@@ -1192,6 +1197,7 @@ $(document).ready(function () {
     $("#text-title").show();
     $("video").hide();
     $(".pdt-btns").hide();
+    $(".bug").hide();
     $(".spec-btns").hide();
     $(".da-btns").show();
     $("#weight").click(function () {
@@ -1702,7 +1708,11 @@ $(document).ready(function () {
     });
   }); 
   $("#bug").click(function (e) {
-    alert("Send email to Thuyavan(tamilarasan_thuyavan@cat.com)");
+    window.location.href = "mailto:tamilarasan_thuyavan@cat.com?subject=Bug found in Automation Toolbox&body=Hi Thuyavan, %0D%0A      I found a bug in Graphic Insert";
+  });
+  $(".bt:eq(8)").click(function () {
+    $(".body").html('<div class="logo"><img src="../img/EA_centerlogo.png" alt=""></div>');   
   });
 });
+
 

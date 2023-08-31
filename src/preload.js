@@ -16,13 +16,20 @@ contextBridge.exposeInMainWorld('electronAPI', {
         // const filePath = path.join(networkSharePath, fileName);
 
         // const path = "G:/Analytics/"+process.env.USERNAME+".json";
+        console.log("steplist");
         const path = "//catedcnas2.ap.cat.com/PSID-I/Analytics/"+process.env.USERNAME+".json";
+        let currentDate = new Date();
+        let cDay = currentDate.getDate();
+        let cMonth = currentDate.getMonth() + 1;
+        let cYear = currentDate.getFullYear();
+        let cdate = (cDay + "/" + cMonth + "/" + cYear)
     
         readFile(path, (error, data) => {
             if (error) {
                 // console.log(error);
                     writeFile(path, JSON.stringify([{
                         userName: process.env.USERNAME,
+                        Date: cdate,
                         buttonType,
                     }], null, 2), (err) => {
                         if (err) {
@@ -46,6 +53,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
             // updating name in shipping_address
             parsedData.push({
                 userName: process.env.USERNAME,
+                Date: cdate,
                 buttonType,
             });
             
@@ -64,7 +72,8 @@ const API = {
         close: () => ipcRenderer.send("app/close"),
         minimize: () => ipcRenderer.send("app/minimize"),
         link: () => ipcRenderer.send("app/link"),
-        mail: () => ipcRenderer.send("app/mail")
+        child: () => ipcRenderer.send("app/child"),
+        jt: () => ipcRenderer.send("app/jt"),
     },
 }
 

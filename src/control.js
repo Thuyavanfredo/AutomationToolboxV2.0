@@ -2,20 +2,24 @@ const { contextBridge, ipcRenderer} = 'electron';
 const MINUS = document.getElementById("minimize");
 const CLOSE_APP = document.getElementById("close-app");
 const LINK = document.getElementById("link");
-// const MAIL = document.getElementById("mail");
+const CHILD = document.getElementById("child");
+const JT = document.getElementById("jt");
 
 MINUS.addEventListener("click", minimize);
 CLOSE_APP.addEventListener("click", close_app);
-
 LINK.addEventListener("click", ea);
-// MAIL.addEventListener("click", ma);
+CHILD.addEventListener("click", cw);
+JT.addEventListener("click", jtprep);
 
 function ea () {
     app.mainWindow.link();
 }
-// function ma () {
-//     app.mainWindow.mail();
-// }
+function jtprep () {
+    app.mainWindow.jt();
+}
+function cw () {
+    app.mainWindow.child();
+}
 function close_app () {
     app.mainWindow.close();
 }
