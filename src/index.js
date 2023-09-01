@@ -3,7 +3,6 @@ const path = require('path');
 const { autoUpdater } = require("electron-updater")
 const log = require('electron-log');
 const fs = require("fs");
-const { shell } = require('electron');
 
 process.env['ELECTRON_DISABLE_SECURITY_WARNINGS'] = 'true';
 
@@ -129,6 +128,7 @@ ipcMain.on("app/minimize", () => {
   mainWindow.minimize();
 });
 ipcMain.on("app/link", () => {
+  const { shell } = require('electron');
   const EA = 'https://engineeringautomation.ecorp.cat.com/eatcui/PNWC/';
   shell.openExternal(EA);
 });
@@ -145,6 +145,20 @@ ipcMain.on("app/child", () => {
   });
   childWindow.loadFile(path.join(__dirname,'steplist.html'));
   childWindow.setMenuBarVisibility(false);
+});
+ipcMain.on("app/child1", () => {
+  let childWindow1;
+  childWindow1 = new BrowserWindow ({
+    icon: path.join(__dirname, '../img/android-chrome-512x512.png'),
+    webPreferences: {
+      nodeIntegration: true,
+      contextIsolation: true,
+      // enableRemoteModule: true,
+      preload: path.join(__dirname, 'preload.js'),
+    },
+  });
+  childWindow1.loadFile(path.join(__dirname,'steplistD&A.html'));
+  childWindow1.setMenuBarVisibility(false);
 });
 ipcMain.on("app/jt", () => {
     var child = require('child_process').execFile;

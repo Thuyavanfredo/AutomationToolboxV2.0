@@ -4,6 +4,22 @@
     font-family: manrope;
     -webkit-app-region: drag;
 }
+body::-webkit-scrollbar {
+    height: 10px;               /* width of the entire scrollbar */
+    width: 10px;               /* width of the entire scrollbar */
+	background-color: #b2bec3;      /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-track {
+    border: 5px solid white;
+	background-color: #b2bec3;      /* color of the tracking area */
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #fbba4c;    /* color of the scroll thumb */
+    border-radius: 10px;       /* roundness of the scroll thumb */
+    border: 1px solid transparent;  /* creates padding around scroll thumb */
+  }
 @font-face {
     font-family: "Avenir";
     src: url(../fonts/AvenirLTStd-Book.otf);

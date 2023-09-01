@@ -3,6 +3,7 @@
 const { contextBridge, ipcRenderer, shell } = require("electron");
 const { writeFile, readFile } = require("fs");
 const { title } = require("process");
+const { start } = require("repl");
 contextBridge.exposeInMainWorld('electronAPI', {
     setTitle: (title) => ipcRenderer.send('set-title', title),
     updateEvent:(buttonType)=>{
@@ -23,6 +24,7 @@ contextBridge.exposeInMainWorld('electronAPI', {
         let cMonth = currentDate.getMonth() + 1;
         let cYear = currentDate.getFullYear();
         let cdate = (cDay + "/" + cMonth + "/" + cYear)
+        let time = (currentDate.getHours() + ":" + currentDate.getMinutes() + ":" + currentDate.getSeconds());
     
         readFile(path, (error, data) => {
             if (error) {
@@ -30,6 +32,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
                     writeFile(path, JSON.stringify([{
                         userName: process.env.USERNAME,
                         Date: cdate,
+                        Time: time,
+                        App: start,
                         buttonType,
                     }], null, 2), (err) => {
                         if (err) {
@@ -54,6 +58,8 @@ contextBridge.exposeInMainWorld('electronAPI', {
             parsedData.push({
                 userName: process.env.USERNAME,
                 Date: cdate,
+                Time: time,
+                App: start,
                 buttonType,
             });
             
@@ -73,6 +79,7 @@ const API = {
         minimize: () => ipcRenderer.send("app/minimize"),
         link: () => ipcRenderer.send("app/link"),
         child: () => ipcRenderer.send("app/child"),
+        child1: () => ipcRenderer.send("app/child1"),
         jt: () => ipcRenderer.send("app/jt"),
     },
 }

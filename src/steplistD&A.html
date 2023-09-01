@@ -6,56 +6,81 @@
 <!-- <link rel="stylesheet" href="https://jsuites.net/v4/jsuites.css" type="text/css" /> -->
 
 <body>
-  <div class="bts">
-    <div class="Stepbuttons">
-              <button id="btn" onclick="window.electronAPI.updateEvent('Table-PDT');">
-                <p id="btnText">Create Table</p>
-                <div class="checked">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                    <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
-                  </svg>
-                </div>
-            </button>
-            <button id="btn1" onclick="window.electronAPI.updateEvent('Steplist-PDT');">
-              <p id="btnText1">Create Steplist</p>
-              <div class="checked">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                  <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
-                </svg>
-              </div>
-          </button>
-          <button id="btn2" onclick="window.electronAPI.updateEvent('Steps-PDT');">
-            <p id="btnText2">Create Steps</p>
-            <div class="checked">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-                <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
-              </svg>
-            </div>
-        </button>
-        <button id="btn3" onclick="window.electronAPI.updateEvent('Figures-PDT');">
-          <p id="btnText3">Create Figures</p>
-          <div class="checked">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
-              <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
-            </svg>
-          </div>
-        </button>
-       <button class="bt" type="reset" onclick="window.location.replace(window.location.href)">Clear</button>
+  <div class="scontainer">
+    <div class="bts">
+      <div class="Stepbuttons">
+                <button id="btn" onclick="window.electronAPI.updateEvent('Required Parts-D&A');">
+                  <p id="btnText">Parts Table</p>
+                  <div class="checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                      <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                  </div>
+                </button>
+                <button id="btn1" onclick="window.electronAPI.updateEvent('Required Tools-D&A');">
+                  <p id="btnText1">Tool Table</p>
+                  <div class="checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                      <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                  </div>
+                </button>
+                <button id="btn2" onclick="window.electronAPI.updateEvent('Specfication Table-D&A');">
+                  <p id="btnText2">Spec Table</p>
+                  <div class="checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                      <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                  </div>
+                </button>
+                <button id="btn3" onclick="window.electronAPI.updateEvent('Approx. weight Table-D&A');">
+                  <p id="btnText3">Weight Table</p>
+                  <div class="checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                      <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                  </div>
+                </button>
+                <button id="btn4" onclick="window.electronAPI.updateEvent('Steplist-D&A');">
+                  <p id="btnText4">Steplist</p>
+                  <div class="checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                      <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                  </div>
+                </button>
+                <button id="btn5" onclick="window.electronAPI.updateEvent('Steps-D&A');">
+                  <p id="btnText5">Steps</p>
+                  <div class="checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                      <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                  </div>
+                </button>
+                <button id="btn6" onclick="window.electronAPI.updateEvent('Figures-D&A');">
+                  <p id="btnText6">Figures</p>
+                  <div class="checked">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50">
+                      <path fill="transparent" d="M14.1 27.2l7.1 7.2 16.7-16.8"></path>
+                    </svg>
+                  </div>
+                </button>
+                <button class="bt" type="reset" onclick="window.location.replace(window.location.href)">Clear</button>
+      </div>
     </div>
+    <div class="save-note">
+      <div class="save">
+        <p>To save as local file <font color=#FFFF00;>Press CTRL + S</font></p>
+      </div>
+      <div class="note">
+        <font color=white>
+          By default Page-wide type for graphics is enabled. For Column-wide type select the check box. Alphabets are case sensitive.
+        </font>
+      </div>
+    </div>
+    <div id="spreadsheet"></div>
   </div>
-  <div class="save-note">
-    <div class="save">
-      <p>To save as local file <font color=#FFFF00;>Press CTRL + S</font></p>
-    </div>
-    <div class="note">
-      <font color=white>
-        By default Page-wide type for graphics is enabled. For Column-wide type select the check box. Alphabets are case sensitive.
-      </font>
-    </div>
-  </div>
-  <div id="spreadsheet"></div>              
-</body>
-<script>
+  <script>
   var data = [
   ];
 
@@ -73,6 +98,11 @@
     {
         type: 'text',
         title:'Part Number',
+        width:180
+    },
+    {
+        type: 'text',
+        title:'Specifications',
         width:180
     },
     {
@@ -130,6 +160,19 @@
       console.log(PN)
       return PN
     }
+    function getConv(item){
+      if (item[4] !== "") {
+        let approx = ((item[4]) * 2.20462262).toFixed(
+            String((item[4])).split(".")[1] &&
+              String((item[4])).split(".")[1].length
+          );
+          let KG = `<unitsgrp><metric>${(item[4])} kg</metric><english>${approx} lb</english></unitsgrp>`;
+          return KG
+      }else{
+        let KG = "";
+        return KG
+      }
+    }
   $("button:eq(0)").click(function(){
           var btn = document.getElementById("btn");
           var btnText = document.getElementById("btnText");
@@ -137,7 +180,7 @@
           btn.classList.add("active");
           setTimeout(function(){
           btn.classList.remove("active");
-          btnText.innerHTML = "Create Table";  
+          btnText.innerHTML = "Table";  
         }, (3*1000));
         console.log(JSON.stringify(data))
         var prefix = `<table frame="all" id="i09415682.5"> <tgroup align="center" cols="4"> <colspec colname="col1" colwidth="0.70*"/> <colspec colname="col2" colwidth="0.75*"/> <colspec colname="col3" colwidth="1.18*"/> <colspec colname="col4" colwidth="1.38*"/> <thead> <row valign="middle"> <entry nameend="col4" namest="col1"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Required Parts</para></entry> </row> <row valign="middle"> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt"?><para>Item</para></entry> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Qty</para></entry> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Number</para></entry> <entry><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Name</para></entry> </row> </thead> <tbody>`
@@ -154,7 +197,7 @@
         })
         console.log(prefix, innerText, suffix)
         navigator.clipboard.writeText(prefix+innerText+suffix);
-    })
+})
   $("button:eq(1)").click(function(){
           var btn = document.getElementById("btn1");
           var btnText = document.getElementById("btnText1");
@@ -162,7 +205,83 @@
           btn.classList.add("active");
           setTimeout(function(){
           btn.classList.remove("active");
-          btnText.innerHTML = "Create Steplist";  
+          btnText.innerHTML = "Tool Table";  
+        }, (3*1000));
+        console.log(JSON.stringify(data))
+        var prefix = `<table frame="all" id="i08328159.2"><tgroup cols="4"><?PubTbl tgroup clmarg="2.0pt" crmarg="2.0pt"?><colspec colname="col1" colwidth="44*"/><colspec colname="col2" colwidth="85*"/><colspec colname="col3" colwidth="169*"/><colspec colname="col4" colwidth="38*"/><thead><row><entry align="center" nameend="col4" namest="col1"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Required Tools</para></entry></row><row><entry align="center"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt"?><para>Tool</para></entry><entry align="center"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Number</para></entry><entry align="center"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Descriion</para></entry><entry align="center"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Qty</para></entry></row></thead><tbody>`
+        var suffix = `</tbody></tgroup></table>`
+        var innerText = ""
+        data.map((item, index)=>{
+         if(item[0]&&item[1]&&item[2]){
+            console.log(index, item[2])
+            let PN = getPN(item)
+            innerText+=`<row><entry align="center"><para>${item[0]}</para></entry><entry align="center" colname="col2" valign="middle"><para><partno>${PN}</partno></para></entry><entry colname="col3"><para><cpn></cpn></para></entry><entry align="center" colname="col4" valign="middle"><para>${item[1]}</para></entry></row>`
+        }else{
+            return
+          }
+        })
+        navigator.clipboard.writeText(prefix+innerText+suffix);
+})
+  $("button:eq(2)").click(function(){
+          var btn = document.getElementById("btn2");
+          var btnText = document.getElementById("btnText2");
+          btnText.innerHTML = "Copied";
+          btn.classList.add("active");
+          setTimeout(function(){
+          btn.classList.remove("active");
+          btnText.innerHTML = "Spec Table";  
+        }, (3*1000));
+        console.log(JSON.stringify(data))
+        var prefix = `<table frame="all" id="i09608397.5" pgwide="1"><tgroup cols="6"><colspec colname="col1" colwidth="0.48*"/><colspec colname="col2" colwidth="0.48*"/><colspec colname="col3" colwidth="0.93*"/><colspec colname="col4" colwidth="1.54*"/><colspec colname="col5" colwidth="1.27*"/><colspec colname="col6" colwidth="1.29*"/><tbody><row><entry align="center" valign="middle"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Item</para></entry><entry align="center" valign="middle"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Qty</para></entry><entry align="center" valign="middle"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Part Number</para></entry><entry align="center" valign="middle"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Part Name</para></entry><entry align="center" valign="middle"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Specifications</para></entry><entry align="center" valign="middle"><?Pub _cellfont Weight="bold"?><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Approximate Weight</para></entry></row>`
+        var suffix = `</tbody></tgroup></table>`
+        var innerText = ""
+        data.map((item, index)=>{
+         if(item[2]){
+            console.log(index, item)
+            let PN = getPN(item)
+            let KG = getConv(item)
+            innerText+=`<row><entry align="center" valign="middle"><para>${item[0]}</para></entry><entry align="center" valign="middle"><para>${item[1]}</para></entry><entry align="center" valign="middle"><para><partno>${PN}</partno></para></entry><entry valign="middle"><para><cpn</cpn></para></entry><entry align="center" valign="middle"><para></para></entry><entry align="center"><para>${KG}</para></entry></row>`
+        }else{
+            return
+          }
+        })
+        console.log(prefix, innerText, suffix)
+        navigator.clipboard.writeText(prefix+innerText+suffix);
+  })
+  $("button:eq(3)").click(function(){
+          var btn = document.getElementById("btn3");
+          var btnText = document.getElementById("btnText3");
+          btnText.innerHTML = "Copied";
+          btn.classList.add("active");
+          setTimeout(function(){
+          btn.classList.remove("active");
+          btnText.innerHTML = "Weight Table";  
+        }, (3*1000));
+        console.log(JSON.stringify(data))
+        var prefix = `<table frame="all" id="i09608397.1"><tgroup align="center" cols="3"><colspec colname="col1"/><colspec colname="col2"/><colspec colname="col3"/><thead><row valign="middle"><entry nameend="col3" namest="col1"><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt" border-top-width="0.20pt"?><para>Approximate Weight</para></entry></row><row valign="middle"><entry><?PubTbl cell border-bottom-width="0.20pt" border-left-width="0.20pt" border-right-width="0.20pt"?><para>Part Number</para></entry><entry><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Part Name</para></entry><entry><?PubTbl cell border-bottom-width="0.20pt" border-right-width="0.20pt"?><para>Weight</para></entry></row></thead><tbody>`
+        var suffix = `</tbody></tgroup></table>`
+        var innerText = ""
+        data.map((item, index)=>{
+         if(item[2]&&item[4]){
+            console.log(index, item)
+            let PN = getPN(item)
+            let KG = getConv(item)
+            innerText+=`<row valign="middle"><entry colname="col1"><para><partno>${PN}</partno></para></entry><entry colname="col2"><para><cpn></cpn></para></entry><entry colname="col3"><para>${KG}</para></entry></row>`
+        }else{
+            return
+          }
+        })
+        console.log(prefix, innerText, suffix)
+        navigator.clipboard.writeText(prefix+innerText+suffix);
+  })
+  $("button:eq(4)").click(function(){
+          var btn = document.getElementById("btn4");
+          var btnText = document.getElementById("btnText4");
+          btnText.innerHTML = "Copied";
+          btn.classList.add("active");
+          setTimeout(function(){
+          btn.classList.remove("active");
+          btnText.innerHTML = "Steplist";  
         }, (3*1000));
       let figureOut = ""
       data.map((item)=>{
@@ -191,14 +310,14 @@
       })
     navigator.clipboard.writeText("<steplist>"+figureOut+"</steplist>");
     })
-  $("button:eq(2)").click(function(){
-          var btn = document.getElementById("btn2");
-          var btnText = document.getElementById("btnText2");
+  $("button:eq(5)").click(function(){
+          var btn = document.getElementById("btn5");
+          var btnText = document.getElementById("btnText5");
           btnText.innerHTML = "Copied";
           btn.classList.add("active");
           setTimeout(function(){
           btn.classList.remove("active");
-          btnText.innerHTML = "Create Steps";  
+          btnText.innerHTML = "Steps";  
         }, (3*1000));
     let figureOut = ""
     data.map((item)=>{
@@ -227,14 +346,14 @@
     })
   navigator.clipboard.writeText(figureOut);
   })
-  $("button:eq(3)").click(function(){
-          var btn = document.getElementById("btn3");
-          var btnText = document.getElementById("btnText3");
+  $("button:eq(6)").click(function(){
+          var btn = document.getElementById("btn6");
+          var btnText = document.getElementById("btnText6");
           btnText.innerHTML = "Copied";
           btn.classList.add("active");
           setTimeout(function(){
           btn.classList.remove("active");
-          btnText.innerHTML = "Create Figures";  
+          btnText.innerHTML = "Figures";  
         }, (3*1000));
     let figureOut = ""
     data.map((item)=>{
@@ -265,5 +384,6 @@
   navigator.clipboard.writeText(figureOut);
   })
   })
-</script>
+</script>              
+</body>
 </html>
