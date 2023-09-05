@@ -133,8 +133,15 @@ ipcMain.on("app/link", () => {
   shell.openExternal(EA);
 });
 ipcMain.on("app/child", () => {
+  const { screen } = require('electron')
+
+  // Create a window that fills the screen's available work area.
+  const primaryDisplay = screen.getPrimaryDisplay()
+  const { width, height } = primaryDisplay.workAreaSize
   let childWindow;
   childWindow = new BrowserWindow ({
+    width,
+    height,
     icon: path.join(__dirname, '../img/android-chrome-512x512.png'),
     webPreferences: {
       nodeIntegration: true,
@@ -147,8 +154,15 @@ ipcMain.on("app/child", () => {
   childWindow.setMenuBarVisibility(false);
 });
 ipcMain.on("app/child1", () => {
+  const { screen } = require('electron')
+
+  // Create a window that fills the screen's available work area.
+  const primaryDisplay = screen.getPrimaryDisplay()
+  const { width, height } = primaryDisplay.workAreaSize
   let childWindow1;
   childWindow1 = new BrowserWindow ({
+    width,
+    height,
     icon: path.join(__dirname, '../img/android-chrome-512x512.png'),
     webPreferences: {
       nodeIntegration: true,

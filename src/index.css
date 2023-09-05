@@ -20,14 +20,14 @@ html,body {
   width: 120px;
   height: 30px;
   position: absolute;
-  left: 828px;
-  top: 20px;
+  left: 817px;
+  top: 21px;
 }
 .bug img{
  position: absolute;
  z-index: 2;
- width: 30px;
- height: 30px;
+ width: 40px;
+ height: 40px;
  -webkit-app-region: no-drag;
 }
 .logo img{
@@ -37,20 +37,15 @@ html,body {
   left: 20%;
   top: 10%;
 }
-#bug:hover:after{
-  content: '';
-  font-family: 'Avenir';
-  font-weight: bold;
-  position: absolute;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  width: 120px;
-  height: 30px;
-  margin-left: 5px;
-  -webkit-app-region: no-drag;
+.bug img:hover{
+  scale: 1.1;
+  cursor: pointer;
+  transition: 0.7s ease;
+}
+.bug img:active{
+  scale: 0.8;
+  cursor: pointer;
+  transition: 0.7s ease;
 }
 .periodicals{
   display: flex;
